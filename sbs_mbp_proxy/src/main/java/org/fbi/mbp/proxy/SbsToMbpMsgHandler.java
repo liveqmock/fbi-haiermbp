@@ -121,9 +121,11 @@ public  class SbsToMbpMsgHandler implements ChannelHandler {
             logger.info("交易[" + routeHeader.getTxnCode() + "] 执行时间:" + elapse + "ms.");
         } finally {
             try {
-                //connection.close();
+                //connection.setSoLinger(true,5);
+                Thread.sleep(200);//等待客户端首先关闭连接
+                connection.close();
             } catch (Exception e) {
-                //
+                logger.debug("连接关闭失败.可忽略.", e);
             }
             MDC.remove("txnCode");
         }
@@ -174,7 +176,7 @@ public  class SbsToMbpMsgHandler implements ChannelHandler {
                 //主动关闭连接
                 socket.close();
             } catch (IOException e) {
-                //
+                logger.debug("连接关闭失败.可忽略.", e);
             }
         }
     }

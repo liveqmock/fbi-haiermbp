@@ -21,7 +21,7 @@ public class ProjectConfigManager {
     private static ProjectConfigManager manager = new ProjectConfigManager();
 
     private ProjectConfigManager() {
-        URL url = ProjectConfigManager.class.getClassLoader().getResource(PROP_FILE_NAME);
+        URL url = ProjectConfigManager.class.getClassLoader().getResource("conf/"+PROP_FILE_NAME);
         if (url == null) {
             logger.error("配置文件不存在!");
             throw new RuntimeException("配置文件不存在!");

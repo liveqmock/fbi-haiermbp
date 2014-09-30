@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AntConfiguration">
+    <buildFile url="file://$PROJECT_DIR$/sbs_mbp_proxy/build.xml" />
+  </component>
   <component name="ArtifactManager">
-    <artifact type="jar" build-on-make="true" name="xplay">
-      <output-path>$PROJECT_DIR$/../../out/artifacts/xplay</output-path>
-      <root id="archive" name="xplay.jar">
-        <element id="module-output" name="xplay" />
+    <artifact type="jar" build-on-make="true" name="xplay-1.0">
+      <output-path>$PROJECT_DIR$/../../out/artifacts/sbs_mbp_proxy/lib</output-path>
+      <root id="archive" name="xplay-1.0.jar">
+        <element id="module-output" name="xplay-1.0" />
         <element id="directory" name="META-INF">
           <element id="file-copy" path="$PROJECT_DIR$/xplay/src/main/java/META-INF/MANIFEST.MF" />
         </element>
       </root>
     </artifact>
-    <artifact build-on-make="true" name="sbs_mbp_proxy">
+    <artifact type="jar" build-on-make="true" name="sbs_mbp_proxy">
+      <output-path>$PROJECT_DIR$/../../out/artifacts/sbs_mbp_proxy/lib</output-path>
+      <root id="archive" name="sbs_mbp_proxy.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/sbs_mbp_proxy/src/main/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="sbs_mbp_proxy" />
+      </root>
+    </artifact>
+    <artifact build-on-make="true" name="sbs_mbp_proxy_config">
       <output-path>$PROJECT_DIR$/../../out/artifacts/sbs_mbp_proxy</output-path>
       <root id="root">
-        <element id="module-output" name="sbs_mbp_proxy" />
-        <element id="module-output" name="xplay" />
+        <element id="module-output" name="sbs_mbp_proxy_config" />
       </root>
     </artifact>
   </component>
@@ -51,7 +62,7 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8" />
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
@@ -236,7 +247,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/sbs_mbp_proxy/sbs_mbp_proxy.iml" filepath="$PROJECT_DIR$/sbs_mbp_proxy/sbs_mbp_proxy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xplay/xplay.iml" filepath="$PROJECT_DIR$/xplay/xplay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sbs_mbp_proxy_start/sbs_mbp_proxy_config.iml" filepath="$PROJECT_DIR$/sbs_mbp_proxy_start/sbs_mbp_proxy_config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xplay/xplay-1.0.iml" filepath="$PROJECT_DIR$/xplay/xplay-1.0.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7_i586" project-jdk-type="JavaSDK">

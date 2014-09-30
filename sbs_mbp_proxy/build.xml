@@ -3,8 +3,9 @@
     <dirname property="base.dir" file="${ant.file}"></dirname>
     <property name="conf.path" location="${base.dir}/classes"></property>
 
-    <target name="deleteConfig">
-        <echo>删除CONF文件</echo>
+    <target name="ResourcesFile">
+        <echo>处理ResourcesFile文件</echo>
+
         <delete dir="${conf.path}">
             <fileset dir="${artifact.output.path}/classes" includes="*.xml,*.properties"></fileset>
         </delete>
