@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Head"/>
+        <xs:element ref="Body"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Head">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Version"/>
+        <xs:element ref="TxCode"/>
+        <xs:element ref="FuncCode"/>
+        <xs:element ref="Channel"/>
+        <xs:element ref="SubCenterId"/>
+        <xs:element ref="NodeId"/>
+        <xs:element ref="TellerId"/>
+        <xs:element ref="TxSeqId"/>
+        <xs:element ref="TxDate"/>
+        <xs:element ref="TxTime"/>
+        <xs:element ref="UserId"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Version" type="xs:string"/>
+  <xs:element name="TxCode" type="xs:string"/>
+  <xs:element name="FuncCode" type="xs:string"/>
+  <xs:element name="Channel" type="xs:string"/>
+  <xs:element name="SubCenterId" type="xs:string"/>
+  <xs:element name="NodeId" type="xs:string"/>
+  <xs:element name="TellerId" type="xs:string"/>
+  <xs:element name="TxSeqId" type="xs:string"/>
+  <xs:element name="TxDate" type="xs:string"/>
+  <xs:element name="TxTime" type="xs:string"/>
+  <xs:element name="UserId" type="xs:string"/>
+  <xs:element name="Body">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="RespMsg"/>
+        <xs:element ref="RespCode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RespMsg" type="xs:string"/>
+  <xs:element name="RespCode" type="xs:string"/>
+</xs:schema>

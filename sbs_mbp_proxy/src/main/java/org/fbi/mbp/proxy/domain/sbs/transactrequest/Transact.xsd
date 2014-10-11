@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Head"/>
+        <xs:element ref="Param"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Head">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="OpBankCode"/>
+        <xs:element ref="OpName"/>
+        <xs:element ref="OpEntID"/>
+        <xs:element ref="OpDate"/>
+        <xs:element ref="OpID"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OpBankCode" type="xs:string"/>
+  <xs:element name="OpName" type="xs:string"/>
+  <xs:element name="OpEntID" type="xs:string"/>
+  <xs:element name="OpDate" type="xs:string"/>
+  <xs:element name="OpID" type="xs:string"/>
+  <xs:element name="Param">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ToAccount"/>
+        <xs:element ref="ToName"/>
+        <xs:element ref="ToBank"/>
+        <xs:element ref="ToReserved1"/>
+        <xs:element ref="ToReserved2"/>
+        <xs:element ref="ToReserved3"/>
+        <xs:element ref="ToReserved4"/>
+        <xs:element ref="FromAccount"/>
+        <xs:element ref="FromName"/>
+        <xs:element ref="FromBank"/>
+        <xs:element ref="FromReserved1"/>
+        <xs:element ref="FromReserved2"/>
+        <xs:element ref="FromReserved3"/>
+        <xs:element ref="FromReserved4"/>
+        <xs:element ref="EnterpriseSerial"/>
+        <xs:element ref="VoucherNum"/>
+        <xs:element ref="Amount"/>
+        <xs:element ref="Currency"/>
+        <xs:element ref="Usage"/>
+        <xs:element ref="TransDate"/>
+        <xs:element ref="System"/>
+        <xs:element ref="Bank"/>
+        <xs:element ref="Local"/>
+        <xs:element ref="Internal"/>
+        <xs:element ref="Public"/>
+        <xs:element ref="Speed"/>
+        <xs:element ref="Reserved1"/>
+        <xs:element ref="Reserved2"/>
+        <xs:element ref="Reserved3"/>
+        <xs:element ref="Reserved4"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ToAccount" type="xs:string"/>
+  <xs:element name="ToName" type="xs:string"/>
+  <xs:element name="ToBank" type="xs:string"/>
+  <xs:element name="ToReserved1" type="xs:string"/>
+  <xs:element name="ToReserved2" type="xs:string"/>
+  <xs:element name="ToReserved3" type="xs:string"/>
+  <xs:element name="ToReserved4" type="xs:string"/>
+  <xs:element name="FromAccount" type="xs:string"/>
+  <xs:element name="FromName" type="xs:string"/>
+  <xs:element name="FromBank" type="xs:string"/>
+  <xs:element name="FromReserved1" type="xs:string"/>
+  <xs:element name="FromReserved2" type="xs:string"/>
+  <xs:element name="FromReserved3" type="xs:string"/>
+  <xs:element name="FromReserved4" type="xs:string"/>
+  <xs:element name="EnterpriseSerial" type="xs:string"/>
+  <xs:element name="VoucherNum" type="xs:string"/>
+  <xs:element name="Amount" type="xs:string"/>
+  <xs:element name="Currency" type="xs:string"/>
+  <xs:element name="Usage" type="xs:string"/>
+  <xs:element name="TransDate" type="xs:string"/>
+  <xs:element name="System" type="xs:string"/>
+  <xs:element name="Bank" type="xs:string"/>
+  <xs:element name="Local" type="xs:string"/>
+  <xs:element name="Internal" type="xs:string"/>
+  <xs:element name="Public" type="xs:string"/>
+  <xs:element name="Speed" type="xs:string"/>
+  <xs:element name="Reserved1" type="xs:string"/>
+  <xs:element name="Reserved2" type="xs:string"/>
+  <xs:element name="Reserved3" type="xs:string"/>
+  <xs:element name="Reserved4" type="xs:string"/>
+</xs:schema>

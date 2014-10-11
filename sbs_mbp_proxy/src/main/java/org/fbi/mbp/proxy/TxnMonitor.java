@@ -36,8 +36,10 @@ public class TxnMonitor implements Runnable {
     public void run() {
         while (true) {
             //long start = System.nanoTime();
+            boolean isEmpty = true;
             if (!taskLogQueue.isEmpty()) {
                 try {
+                    isEmpty = false;
                     count++;
                     taskLogOut.write(("" + count + "|").getBytes());
                     taskLogOut.write(taskLogQueue.poll().getBytes());
@@ -45,20 +47,24 @@ public class TxnMonitor implements Runnable {
                 } catch (IOException e) {
                     logger.error("TaskMonitor 队列读取失败.", e);
                 }
+            }
 
-                if (!warningLogQueue.isEmpty()) {
-                    try {
-                        warningCount++;
-                        warningLogOut.write(("" + warningCount + "|").getBytes());
-                        warningLogOut.write(warningLogQueue.poll().getBytes());
-                        warningLogOut.write("\r\n".getBytes());
-                    } catch (IOException e) {
-                        logger.error("TaskMonitor 队列读取失败.", e);
-                    }
-                }
-            } else {
+            if (!warningLogQueue.isEmpty()) {
                 try {
-                    Thread.sleep(1000);
+                    isEmpty = false;
+                    warningCount++;
+                    warningLogOut.write(("" + warningCount + "|").getBytes());
+                    warningLogOut.write(warningLogQueue.poll().getBytes());
+                    warningLogOut.write("\r\n".getBytes());
+                } catch (IOException e) {
+                    logger.error("TaskMonitor 队列读取失败.", e);
+                }
+
+            }
+
+            if (isEmpty) {
+                try {
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     logger.error("TaskMonitor 写文件失败.", e);
                 }

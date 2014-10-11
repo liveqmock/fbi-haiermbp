@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="GBK"?>
+<root>
+<Head>
+	<OpBankCode>105</OpBankCode>
+	<OpName>Transact</OpName>
+	<OpEntID>SBS</OpEntID>
+	<OpDate>20141010</OpDate>
+	<OpID>1300000000000037</OpID>
+</Head>
+<Param>
+	<ToAccount>11000071209595027012</ToAccount>
+	<ToName>泌阳县新盛电器维修有限公司</ToName>
+	<ToBank>泌阳县农村信用合作社联合社</ToBank>
+	<ToReserved1>402511301018</ToReserved1>
+	<ToReserved2>402511301018</ToReserved2>
+	<ToReserved3></ToReserved3>
+	<ToReserved4></ToReserved4>
+	<FromAccount>37101985510050404002</FromAccount>
+	<FromName>海尔财务公司</FromName>
+	<FromBank>青岛建行</FromBank>
+	<FromReserved1>105452004038</FromReserved1>
+	<FromReserved2>105452004038</FromReserved2>
+	<FromReserved3></FromReserved3>
+	<FromReserved4></FromReserved4>
+	<EnterpriseSerial>1300000000000037</EnterpriseSerial>
+	<VoucherNum></VoucherNum>
+	<Amount>101</Amount>
+	<Currency>CNY</Currency>
+	<Usage>GE冰箱展台制作</Usage>
+	<TransDate>20141010</TransDate>
+	<System>1</System>
+	<Bank>1</Bank>
+	<Local>1</Local>
+	<Internal>0</Internal>
+	<Public>0</Public>
+	<Speed>1</Speed>
+	<Reserved1>801000017002013001,重庆海尔投资发展有限公司</Reserved1>
+	<Reserved2></Reserved2>
+	<Reserved3></Reserved3>
+	<Reserved4></Reserved4>
+</Param>
+</root>

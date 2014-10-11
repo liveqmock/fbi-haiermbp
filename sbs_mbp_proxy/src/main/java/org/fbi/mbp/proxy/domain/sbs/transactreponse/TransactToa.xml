@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312"?>
+<root>
+<Head>
+<OpRetCode>0</OpRetCode>
+<OpRetMsg>SUCCESS</OpRetMsg>
+</Head>
+<Param>
+<Result>0</Result>
+<BankSerial>16281304</BankSerial>
+<Reserved1></Reserved1>
+<Reserved2></Reserved2>
+<Reserved3></Reserved3>
+<Reserved4></Reserved4>
+</Param>
+</root>

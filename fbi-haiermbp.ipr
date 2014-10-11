@@ -26,6 +26,9 @@
       <output-path>$PROJECT_DIR$/../../out/artifacts/sbs_mbp_proxy</output-path>
       <root id="root">
         <element id="module-output" name="sbs_mbp_proxy_config" />
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+        </element>
       </root>
     </artifact>
   </component>

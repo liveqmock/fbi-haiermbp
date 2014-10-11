@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gb2312"?>
+<root>
+	<NBIP>127.0.0.1</NBIP>
+	<NBPort>9999</NBPort>
+	<Timeout>160</Timeout>
+	<CUST_ID>3702001807946</CUST_ID>
+	<USER_ID>WLPT02</USER_ID>
+	<PASSWORD>830109</PASSWORD>
+	<NBDownloadFilePath>C:\CCB_EBSClient_B2BV5.0Build20131102\download</NBDownloadFilePath>
+	<version>01</version>
+	<channel>0002</channel>
+	<subcenterid>0371</subcenterid>
+	<nodeid>0371000000000261</nodeid>
+	<tellerid>060830</tellerid>
+	<userid>0371000000000261</userid>
+	<branchid>54751</branchid>
+	<operatoruserid>0371000000000261</operatoruserid>
+	<curcode>CNY</curcode>
+	<stipflag>1</stipflag>
+	<ICIP>10.143.20.15</ICIP>
+	<ICPort>9001</ICPort>
+	<ICDownloadFilePath>D:\ccb\appdir\WinBridge_XP</ICDownloadFilePath>
+	<FTIIP>10.143.20.15</FTIIP>
+	<FTIPort>8802</FTIPort>
+	<TotalAccount>37101985510050404002</TotalAccount>
+	<CCBFilePath>D:\ccb\appdir\temp</CCBFilePath>
+	<CCBSendFilePath>d:\ccb\appdir\VipWinBridge</CCBSendFilePath>//确认生产上winbridge配置的目录				
+	<CCBRecvFilePath>d:\ccb\WinBridge</CCBRecvFilePath>//确认生产上winbridge的安装路径		
+	<BackupPath>D:\ccb\appdir\statementFile</BackupPath>	//确认对账单的放置路径
+	<ComName>haieradmin</ComName>//winbridge安装的机器的用户名
+	<PWD>haier,2010</PWD>		//	/winbridge安装的机器的密码
+</root>
