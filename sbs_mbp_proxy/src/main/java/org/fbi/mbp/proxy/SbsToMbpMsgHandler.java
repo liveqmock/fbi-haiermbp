@@ -3,15 +3,23 @@ package org.fbi.mbp.proxy;
 import org.fbi.xplay.ChannelContext;
 import org.fbi.xplay.ChannelHandler;
 import org.fbi.xplay.SocketUtils;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.input.SAXBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 
-import java.io.*;
-import java.net.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketAddress;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
@@ -19,13 +27,11 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * 报文转换
  */
 public  class SbsToMbpMsgHandler implements ChannelHandler {
+    private final String projectRootDir = ProjectConfigManager.getInstance().getStringProperty("prj_root_dir");
+
     //现在MBP的地址及端口 proxy的目的地
     private final String remoteHost = ProjectConfigManager.getInstance().getStringProperty("remote_server_ip");
     private final int remotePort = ProjectConfigManager.getInstance().getIntProperty("remote_server_port");
-
-    //WinBridge的地址及端口
-    private final String ccbWinbridgeHost = ProjectConfigManager.getInstance().getStringProperty("ccb_winbridge_server_ip");
-    private final int ccbWinbridgePort = ProjectConfigManager.getInstance().getIntProperty("ccb_winbridge_server_port");
 
     private int timeout = ProjectConfigManager.getInstance().getIntProperty("remote_server_timeout"); //默认超时时间：ms  连接超时与读超时统一
     private int warningtime = ProjectConfigManager.getInstance().getIntProperty("remote_server_txn_warning_time"); //长交易时间预警阈值：ms
@@ -34,7 +40,8 @@ public  class SbsToMbpMsgHandler implements ChannelHandler {
     private static int MSG_LENGTH_FIELD_LEN = 10;  //表示业务交易整包长度的字段的长度
     private static int MSG_HEADER_LEN = 16 + 6 + 3;   //业务交易包header 长度
 
-    Properties ccbConfig = null;
+    HashMap<String,String> ccbRouterConfig = new HashMap<>();
+    List<String> localTxncodes = new ArrayList<>();
 
     private ConcurrentLinkedQueue<String> taskLogQueue;
     private ConcurrentLinkedQueue<String> warningTaskLogQueue;
@@ -47,18 +54,8 @@ public  class SbsToMbpMsgHandler implements ChannelHandler {
         this.taskLogQueue = taskLogQueue;
         this.warningTaskLogQueue = warningTaskLogQueue;
 
-        URL url = ProjectConfigManager.class.getClassLoader().getResource("conf/" + "SBS_105.bic");
-        if (url == null) {
-            logger.error("配置文件不存在!");
-            throw new RuntimeException("配置文件不存在!");
-        }
-        Properties ccbConfig = new Properties();
-        try {
-            ccbConfig.load(new FileInputStream(new File(url.getFile())));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
+        initCcbConfig();
+        initLocalTxncodeList();
     }
 
     //短链接 处理完成后 由客户端close connection
@@ -111,29 +108,39 @@ public  class SbsToMbpMsgHandler implements ChannelHandler {
                 throw new RuntimeException("报文长度错误,应为:[" + msgLen + "], 实际获取长度:[" + readNum + "]");
             }
 
-            //byte[] inHeadBuf = new byte[MSG_HEADER_LEN];
-            //System.arraycopy(inMsgBuf, 0, inHeadBuf, 0, inHeadBuf.length);
-            //MsgHeader msgHeader = new MsgHeader(new String(inHeadBuf));
-
-            MDC.put("txnCode", routeHeader.getTxnCode());
+            String txnCode = routeHeader.getTxnCode();
+            MDC.put("txnCode", txnCode);
 
             String inBodyData = new String(inMsgBuf, "GBK");
             logger.debug("Client request body:" + inBodyData);
 
-            //proxy
-            handleProxy(SocketUtils.bytesMerger(inRouteHeaderBuf, SocketUtils.bytesMerger(inMsgLenBuf, inMsgBuf)), out);
+            if (isLocalTxncode(txnCode)) {
+                Class processType = Class.forName("org.fbi.mbp.proxy.processor." + txnCode + "Processor");
+                TxnProcessor processor = (TxnProcessor) processType.newInstance();
+
+                TxnContext txnContext = initTxnContext(out, inMsgBuf);
+                processor.process(txnContext);
+            } else {
+                byte[] requestBuffer = SocketUtils.bytesMerger(inRouteHeaderBuf, SocketUtils.bytesMerger(inMsgLenBuf, inMsgBuf));
+                handleProxy(requestBuffer, out);
+            }
 
             Calendar end = Calendar.getInstance();
             SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             long elapse = end.getTimeInMillis() - start.getTimeInMillis();
-            String monitorLog = routeHeader.getTxnCode() + "|" + df.format(start.getTime()) + "|" + df.format(end.getTime()) + "|" + elapse;
+            String monitorLog = txnCode + "|" + df.format(start.getTime()) + "|" + df.format(end.getTime()) + "|" + elapse;
 
             taskLogQueue.add(monitorLog);
             if (elapse >= warningtime) {
                 warningTaskLogQueue.add(monitorLog);
             }
-
-            logger.info("交易[" + routeHeader.getTxnCode() + "] 执行时间:" + elapse + "ms.");
+            logger.info("交易[" + txnCode + "] 执行时间:" + elapse + "ms.");
+        } catch (ClassNotFoundException e) {
+            logger.error("Txn processor not found!", e);
+            throw new RuntimeException(e); //TODO  catch thread exception
+        } catch (InstantiationException | IllegalAccessException e) {
+            logger.error("Txn processor InstantiationException error!", e);
+            throw new RuntimeException(e); //TODO  catch thread exception
         } finally {
             try {
                 //connection.setSoLinger(true,5);
@@ -175,11 +182,6 @@ public  class SbsToMbpMsgHandler implements ChannelHandler {
                 throw new RuntimeException("报文长度错误,应为:[" + msgLen + "], 实际获取长度:[" + readNum + "]");
             }
 
-            //byte[] inHeadBuf = new byte[MSG_HEADER_LEN];
-            //System.arraycopy(inMsgBuf, 0, inHeadBuf, 0, inHeadBuf.length);
-            //MsgHeader msgHeader = new MsgHeader(new String(inHeadBuf));
-            //logger.debug("Remote server response header:" + msgHeader.toString());
-
             String inBodyData = new String(inMsgBuf, "GBK");
             logger.debug("Remote server response body:" + inBodyData);
 
@@ -196,49 +198,50 @@ public  class SbsToMbpMsgHandler implements ChannelHandler {
         }
     }
 
-    //不发送MBP，直接进行处理
-    private void handleTxnMsg(byte[] sendRemoteBuf, OutputStream sendClientOS) throws IOException {
-        InetAddress addr = InetAddress.getByName(ccbWinbridgeHost);
-        Socket socket = new Socket();
-        try {
-            socket.connect(new InetSocketAddress(addr, ccbWinbridgePort), timeout);
-            socket.setSoTimeout(timeout);
+    //======================
+    //初始化本地交易处理列表
+    private void initLocalTxncodeList(){
+        String localTxncode = ProjectConfigManager.getInstance().getStringProperty("local_txncode");
+        this.localTxncodes = Arrays.asList(localTxncode.split(","));
+    }
 
-            OutputStream os = socket.getOutputStream();
-            os.write(sendRemoteBuf);
-            os.flush();
-            InputStream is = socket.getInputStream();
-
-            byte[] inMsgLenBuf = new byte[MSG_LENGTH_FIELD_LEN];
-            int readNum = is.read(inMsgLenBuf);
-            if (readNum == -1) {
-                throw new RuntimeException("服务器连接已关闭!");
-            }
-            if (readNum < MSG_LENGTH_FIELD_LEN) {
-                throw new RuntimeException("读取报文头长度部分错误...");
-            }
-
-            int msgLen = Integer.parseInt(new String(inMsgLenBuf));
-            byte[] inMsgBuf = new byte[msgLen];
-
-            readNum = is.read(inMsgBuf);   //阻塞读
-            if (readNum != msgLen) {
-                throw new RuntimeException("报文长度错误,应为:[" + msgLen + "], 实际获取长度:[" + readNum + "]");
-            }
-
-            String inBodyData = new String(inMsgBuf, "GBK");
-            logger.debug("Remote server response body:" + inBodyData);
-
-            byte[] sendClientBuf = SocketUtils.bytesMerger(inMsgLenBuf, inMsgBuf);
-            sendClientOS.write(sendClientBuf, 0, sendClientBuf.length);
-            sendClientOS.flush();
-        } finally {
-            try {
-                //主动关闭连接
-                socket.close();
-            } catch (IOException e) {
-                logger.debug("连接关闭失败.可忽略.", e);
+    private boolean isLocalTxncode(String txncode){
+        for (String localTxncode : localTxncodes) {
+            if (txncode.equalsIgnoreCase(localTxncode)) {
+                return true;
             }
         }
+        return false;
+    }
+
+    private void initCcbConfig() {
+
+        String xmlfilename = projectRootDir + "/conf/SBS_105.bic";
+        try {
+            SAXBuilder b = new SAXBuilder();
+            Document doc = b.build(new File(xmlfilename));
+            Element rootElement = doc.getRootElement();
+            List<Element> allChildren = rootElement.getChildren();
+            for (Element child : allChildren) {
+                ccbRouterConfig.put(child.getName(), child.getText());
+            }
+
+/*
+            File file = new File(pathname);
+            ccbRouterConfig.loadFromXML(new FileInputStream(file));
+            logger.info("=====" + ccbRouterConfig.getProperty("version"));
+*/
+        } catch (Exception e) {
+            throw new RuntimeException("配置文件读取失败" + xmlfilename, e);
+        }
+    }
+
+    private TxnContext initTxnContext(OutputStream out, byte[] requestBuffer) {
+        TxnContext txnContext = new TxnContext();
+        txnContext.setProjectRootDir(this.projectRootDir);
+        txnContext.setCcbRouterConfig(ccbRouterConfig);
+        txnContext.setRequestBuffer(requestBuffer);
+        txnContext.setClientReponseOutputStream(out);
+        return txnContext;
     }
 }

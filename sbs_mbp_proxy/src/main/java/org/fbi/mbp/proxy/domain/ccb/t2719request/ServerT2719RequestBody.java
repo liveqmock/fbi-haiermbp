@@ -73,7 +73,7 @@ import javax.xml.bind.annotation.XmlType;
     "memo"
 })
 @XmlRootElement(name = "Body")
-public class Body {
+public class ServerT2719RequestBody {
 
     @XmlElement(name = "CoSeqId", required = true)
     protected String coSeqId;

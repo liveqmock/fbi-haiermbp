@@ -11,8 +11,46 @@ import java.util.List;
  * Created by zhanrui on 2014/10/8.
  * 流水号文件处理
  */
-public class TxtFileHelper {
-    private static Logger logger = LoggerFactory.getLogger(TxtFileHelper.class);
+public class TxnSnFileHelper {
+    private static Logger logger = LoggerFactory.getLogger(TxnSnFileHelper.class);
+
+    public synchronized static boolean isRepeatSn(String fileName, String sn) {
+        if (fileName == null || "".equals(fileName)) {
+            throw new IllegalArgumentException("文件名不能为空.");
+        }
+
+        boolean isFound = false;
+        File file = new File(fileName);
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(file));
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] fields = line.split(":");
+                if (sn.equals(fields[0])) {
+                    isFound = true;
+                    break;
+                }
+            }
+        } catch (FileNotFoundException e) {
+            return false;
+            //TODO
+//            logger.error("文件不存在", e);
+//            throw new RuntimeException(e);
+        } catch (IOException e) {
+            logger.error("文件处理错误", e);
+            throw new RuntimeException(e);
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    logger.error("文件处理错误", e);
+                }
+            }
+        }
+        return isFound;
+    }
 
     public synchronized static List<String> readFileByLines(String fileName) {
         List<String> lines = new ArrayList<>();
@@ -29,8 +67,10 @@ public class TxtFileHelper {
             }
         } catch (FileNotFoundException e) {
             logger.error("文件不存在", e);
+            throw new RuntimeException(e);
         } catch (IOException e) {
             logger.error("文件处理错误", e);
+            throw new RuntimeException(e);
         } finally {
             if (br != null) {
                 try {
@@ -63,6 +103,7 @@ public class TxtFileHelper {
         } catch (Exception e) {
             flag = false;
             logger.error("文件处理错误", e);
+            throw new RuntimeException(e);
         }
 
         if (osw != null) {
@@ -70,11 +111,13 @@ public class TxtFileHelper {
             try {
                 if (content != null && !"".equals(content)) {
                     bw.write(content);
+                    bw.newLine();
                     flag = true;
                 }
             } catch (IOException e) {
                 flag = false;
                 logger.error("文件处理错误", e);
+                throw new RuntimeException(e);
             } finally {
                 try {
                     bw.close();

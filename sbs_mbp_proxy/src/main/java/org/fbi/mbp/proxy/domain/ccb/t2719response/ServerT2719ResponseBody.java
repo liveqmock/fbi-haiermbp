@@ -41,7 +41,7 @@ import javax.xml.bind.annotation.XmlType;
     "respCode"
 })
 @XmlRootElement(name = "Body")
-public class Body {
+public class ServerT2719ResponseBody {
 
     @XmlElement(name = "RespMsg", required = true)
     protected String respMsg;

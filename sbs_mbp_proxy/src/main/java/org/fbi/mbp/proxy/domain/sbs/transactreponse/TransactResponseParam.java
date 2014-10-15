@@ -49,7 +49,7 @@ import javax.xml.bind.annotation.XmlType;
     "reserved4"
 })
 @XmlRootElement(name = "Param")
-public class Param {
+public class TransactResponseParam {
 
     @XmlElement(name = "Result", required = true)
     protected String result;

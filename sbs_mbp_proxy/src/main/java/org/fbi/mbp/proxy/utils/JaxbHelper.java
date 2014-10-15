@@ -1,6 +1,6 @@
 package org.fbi.mbp.proxy.utils;
 
-import org.fbi.mbp.proxy.domain.sbs.transactrequest.TransactRoot;
+import org.fbi.mbp.proxy.domain.sbs.transactrequest.TransactRequestRoot;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -14,9 +14,9 @@ import java.io.UnsupportedEncodingException;
  * Created by zhanrui on 2014/10/11.
  * jaxb¹¤¾ß
  */
-public class JaxbHelper<T> {
+public class JaxbHelper {
 
-    public T xmlToBean(Class msgBeanClazz, byte[] buffer) {
+    public <T> T xmlToBean(Class msgBeanClazz, byte[] buffer) {
         try {
             ByteArrayInputStream is = new ByteArrayInputStream(buffer);
             JAXBContext jaxbContext = JAXBContext.newInstance(msgBeanClazz);
@@ -28,11 +28,11 @@ public class JaxbHelper<T> {
         }
     }
 
-    public String beanToXml(Class msgBeanClazz, T msgBean) {
+    public <T> String beanToXml(Class msgBeanClazz, T msgBean) {
         try {
             JAXBContext jc = JAXBContext.newInstance(msgBeanClazz);
             Marshaller ms = jc.createMarshaller();
-            ms.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            ms.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, false);
             ms.setProperty(Marshaller.JAXB_ENCODING, "GBK");
             ms.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
 
@@ -90,8 +90,9 @@ public class JaxbHelper<T> {
                 "</Param>\n" +
                 "</root>";
 
-        JaxbHelper<TransactRoot> test = new JaxbHelper<TransactRoot>();
-        TransactRoot msg = (TransactRoot) test.xmlToBean(TransactRoot.class, xml.getBytes());
-        test.beanToXml(TransactRoot.class, msg);
+        JaxbHelper test = new JaxbHelper();
+        TransactRequestRoot msg =  test.xmlToBean(TransactRequestRoot.class, xml.getBytes());
+        System.out.println(msg);
+        System.out.println(test.beanToXml(TransactRequestRoot.class, msg));
     }
 }

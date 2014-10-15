@@ -8,13 +8,7 @@
 
 package org.fbi.mbp.proxy.domain.sbs.transactrequest;
 
-import org.fbi.mbp.proxy.domain.sbs.ClientReqestParam;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -99,7 +93,7 @@ import javax.xml.bind.annotation.XmlType;
     "reserved4"
 })
 @XmlRootElement(name = "Param")
-public class TransactParam extends ClientReqestParam {
+public class TransactRequestParam  {
 
     @XmlElement(name = "ToAccount", required = true)
     protected String toAccount;

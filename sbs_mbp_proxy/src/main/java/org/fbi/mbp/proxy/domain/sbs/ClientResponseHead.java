@@ -6,7 +6,7 @@
 //
 
 
-package org.fbi.mbp.proxy.domain.sbs.transactreponse;
+package org.fbi.mbp.proxy.domain.sbs;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -40,7 +40,7 @@ import java.math.BigInteger;
     "opRetMsg"
 })
 @XmlRootElement(name = "Head")
-public class Head {
+public class ClientResponseHead {
 
     @XmlElement(name = "OpRetCode", required = true)
     protected BigInteger opRetCode;

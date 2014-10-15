@@ -6,13 +6,11 @@
 //
 
 
-package org.fbi.mbp.proxy.domain.sbs;
+package org.fbi.mbp.proxy.domain.sbs.transactrequest;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import org.fbi.mbp.proxy.domain.sbs.ClientRequestRoot;
+
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -41,58 +39,32 @@ import javax.xml.bind.annotation.XmlType;
     "param"
 })
 @XmlRootElement(name = "root")
-public class ClientReqestRoot {
+public class TransactRequestRoot extends ClientRequestRoot {
 
-    @XmlElement(name = "Head", required = true)
-    protected ClientReqestHead head;
     @XmlElement(name = "Param", required = true)
-    protected ClientReqestParam param;
-
-    /**
-     * Gets the value of the head property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ClientReqestHead }
-     *     
-     */
-    public ClientReqestHead getHead() {
-        return head;
-    }
-
-    /**
-     * Sets the value of the head property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ClientReqestHead }
-     *     
-     */
-    public void setHead(ClientReqestHead value) {
-        this.head = value;
-    }
+    protected TransactRequestParam param;
 
     /**
      * Gets the value of the param property.
-     * 
+     *
      * @return
      *     possible object is
-     *     {@link org.fbi.mbp.proxy.domain.sbs.transactrequest.TransactParam }
-     *     
+     *     {@link TransactRequestParam }
+     *
      */
-    public ClientReqestParam getParam() {
+    public TransactRequestParam getParam() {
         return param;
     }
 
     /**
      * Sets the value of the param property.
-     * 
+     *
      * @param value
      *     allowed object is
-     *     {@link org.fbi.mbp.proxy.domain.sbs.transactrequest.TransactParam }
+     *     {@link TransactRequestParam }
      *     
      */
-    public void setParam(ClientReqestParam value) {
+    public void setParam(TransactRequestParam value) {
         this.param = value;
     }
 

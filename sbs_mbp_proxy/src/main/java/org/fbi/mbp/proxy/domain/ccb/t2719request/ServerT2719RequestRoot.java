@@ -8,11 +8,9 @@
 
 package org.fbi.mbp.proxy.domain.ccb.t2719request;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import org.fbi.mbp.proxy.domain.ccb.ServerMsgRoot;
+
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -41,58 +39,33 @@ import javax.xml.bind.annotation.XmlType;
     "body"
 })
 @XmlRootElement(name = "Root")
-public class Root {
+public class ServerT2719RequestRoot extends ServerMsgRoot {
 
-    @XmlElement(name = "Head", required = true)
-    protected Head head;
     @XmlElement(name = "Body", required = true)
-    protected Body body;
+    protected ServerT2719RequestBody body;
 
-    /**
-     * Gets the value of the head property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Head }
-     *     
-     */
-    public Head getHead() {
-        return head;
-    }
-
-    /**
-     * Sets the value of the head property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Head }
-     *     
-     */
-    public void setHead(Head value) {
-        this.head = value;
-    }
 
     /**
      * Gets the value of the body property.
-     * 
+     *
      * @return
      *     possible object is
-     *     {@link Body }
-     *     
+     *     {@link ServerT2719RequestBody }
+     *
      */
-    public Body getBody() {
+    public ServerT2719RequestBody getBody() {
         return body;
     }
 
     /**
      * Sets the value of the body property.
-     * 
+     *
      * @param value
      *     allowed object is
-     *     {@link Body }
+     *     {@link ServerT2719RequestBody }
      *     
      */
-    public void setBody(Body value) {
+    public void setBody(ServerT2719RequestBody value) {
         this.body = value;
     }
 
