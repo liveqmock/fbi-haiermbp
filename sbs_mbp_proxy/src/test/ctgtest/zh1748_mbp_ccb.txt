@@ -1,0 +1,59 @@
+Time:16:28:13(hh:mm:ss):
+send:id=16281304,收到
+<?xml version="1.0"?>
+<Root>
+<Head>
+	<Version>01</Version>
+	<TxCode>2719</TxCode>
+	<FuncCode>000</FuncCode>
+	<Channel>0002</Channel>
+	<SubCenterId>0371</SubCenterId>
+	<NodeId>0371000000000261</NodeId>
+	<TellerId>060830</TellerId>
+	<TxSeqId>16281304</TxSeqId>
+	<TxDate>20141010</TxDate>
+	<TxTime>162813</TxTime>
+	<UserId>0371000000000261</UserId>
+</Head>
+<Body>
+	<CoSeqId>16281304</CoSeqId>
+	<OperatorUserId>0371000000000261</OperatorUserId>
+	<OutUserId>0371000000000261</OutUserId>
+	<OutDepId>37199</OutDepId>
+	<OutAcctId>37101985510050404002</OutAcctId>
+	<OutAcctName>海尔财务公司</OutAcctName>
+	<OutBranchName>青岛建行</OutBranchName>
+	<QuotaAcctId>801000017002013001</QuotaAcctId>
+	<QuotaAcctName>重庆海尔投资发展有限公司</QuotaAcctName>
+	<InUserId>9999999999999999</InUserId>
+	<InDepId>00000</InDepId>
+	<InAcctId>11000071209595027012</InAcctId>
+	<InAcctName>泌阳县新盛电器维修有限公司</InAcctName>
+	<InBranchName>泌阳县农村信用合作社联合社</InBranchName>
+	<InBranchId>402511301018</InBranchId>
+	<BankFlag>0</BankFlag>
+	<TxAmount>101</TxAmount>
+	<Memo>代理支付</Memo>
+</Body>
+</Root>
+Time:16:28:25(hh:mm:ss):
+recv:id=16281304,<?xml version="1.0"?>
+<Root>
+<Head>
+    <Version>01</Version>
+    <TxCode>2719</TxCode>
+    <FuncCode>100</FuncCode>
+    <Channel>0002</Channel>
+    <SubCenterId>0371</SubCenterId>
+    <NodeId>0371000000000261</NodeId>
+    <TellerId>060830</TellerId>
+    <TxSeqId>16281304</TxSeqId>
+    <TxDate>20141010</TxDate>
+    <TxTime>162813</TxTime>
+    <UserId>0371000000000261</UserId>
+  </Head>
+  <Body>
+    <RespMsg>转帐成功!</RespMsg>
+    <RespCode>M0001</RespCode>
+  </Body>
+</Root>

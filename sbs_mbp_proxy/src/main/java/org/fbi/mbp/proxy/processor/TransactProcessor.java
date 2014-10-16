@@ -2,10 +2,10 @@ package org.fbi.mbp.proxy.processor;
 
 import org.fbi.mbp.proxy.TxnContext;
 import org.fbi.mbp.proxy.TxnProcessor;
-import org.fbi.mbp.proxy.domain.ccb.ServerMsgHead;
-import org.fbi.mbp.proxy.domain.ccb.t2719request.ServerT2719RequestBody;
-import org.fbi.mbp.proxy.domain.ccb.t2719request.ServerT2719RequestRoot;
-import org.fbi.mbp.proxy.domain.ccb.t2719response.ServerT2719ResponseRoot;
+import org.fbi.mbp.proxy.domain.ccbvip.CcbvipMsgHead;
+import org.fbi.mbp.proxy.domain.ccbvip.t2719request.CcbvipT2719RequestBody;
+import org.fbi.mbp.proxy.domain.ccbvip.t2719request.CcbvipT2719RequestRoot;
+import org.fbi.mbp.proxy.domain.ccbvip.t2719response.CcbvipT2719ResponseRoot;
 import org.fbi.mbp.proxy.domain.sbs.ClientResponseHead;
 import org.fbi.mbp.proxy.domain.sbs.transactreponse.TransactResponseParam;
 import org.fbi.mbp.proxy.domain.sbs.transactreponse.TransactResponseRoot;
@@ -42,11 +42,11 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
             }
 
             //转换2：Client Request Bean -> Server Request Bean
-            ServerT2719RequestRoot servReqBean =  new ServerT2719RequestRoot();
+            CcbvipT2719RequestRoot servReqBean =  new CcbvipT2719RequestRoot();
             assembleServerRequestRoot(context, clientReqBean, servReqBean, tpsTxnSn);
 
             //转换3：Server Request Bean -> Server Request Xml
-            String ccbReqXml = jaxbHelper.beanToXml(ServerT2719RequestRoot.class, servReqBean);
+            String ccbReqXml = jaxbHelper.beanToXml(CcbvipT2719RequestRoot.class, servReqBean);
 
             //与第三方Server通讯
             String tpsRespXml = processServerRequest(context, "2719", ccbReqXml);
@@ -54,7 +54,7 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
 
             //转换4：Server Response Xml -> Server Response Bean
             tpsRespXml = "<?xml version=\"1.0\" encoding=\"GBK\"?>" + tpsRespXml.substring(21);
-            ServerT2719ResponseRoot servRespBean =  jaxbHelper.xmlToBean(ServerT2719ResponseRoot.class, tpsRespXml.getBytes("GBK"));
+            CcbvipT2719ResponseRoot servRespBean =  jaxbHelper.xmlToBean(CcbvipT2719ResponseRoot.class, tpsRespXml.getBytes("GBK"));
 
             //检查逻辑
             if (!servReqBean.getHead().getTxSeqId().equals(servRespBean.getHead().getTxSeqId())) {
@@ -116,9 +116,9 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
     }
 
     //转换成 CCB Bean
-    private void assembleServerRequestRoot(TxnContext context, TransactRequestRoot clientReqestBean, ServerT2719RequestRoot servReqRoot, String tpsTxnSn) {
-        ServerMsgHead servReqHead = new ServerMsgHead();
-        ServerT2719RequestBody servReqBody = new ServerT2719RequestBody();
+    private void assembleServerRequestRoot(TxnContext context, TransactRequestRoot clientReqestBean, CcbvipT2719RequestRoot servReqRoot, String tpsTxnSn) {
+        CcbvipMsgHead servReqHead = new CcbvipMsgHead();
+        CcbvipT2719RequestBody servReqBody = new CcbvipT2719RequestBody();
         //ServerT2719RequestRoot servReqRoot = new ServerT2719RequestRoot();
         servReqRoot.setHead(servReqHead);
         servReqRoot.setBody(servReqBody);

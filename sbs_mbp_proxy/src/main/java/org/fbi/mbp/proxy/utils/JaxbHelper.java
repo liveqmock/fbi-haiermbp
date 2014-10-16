@@ -1,6 +1,6 @@
 package org.fbi.mbp.proxy.utils;
 
-import org.fbi.mbp.proxy.domain.ccb.t2719response.ServerT2719ResponseRoot;
+import org.fbi.mbp.proxy.domain.ccbvip.t2719response.CcbvipT2719ResponseRoot;
 import org.fbi.mbp.proxy.domain.sbs.ClientResponseHead;
 import org.fbi.mbp.proxy.domain.sbs.transactreponse.TransactResponseParam;
 import org.fbi.mbp.proxy.domain.sbs.transactreponse.TransactResponseRoot;
@@ -145,9 +145,9 @@ public class JaxbHelper {
                 "</Root>";
 
         JaxbHelper test = new JaxbHelper();
-        ServerT2719ResponseRoot msg =  test.xmlToBean(ServerT2719ResponseRoot.class, xml.getBytes());
+        CcbvipT2719ResponseRoot msg =  test.xmlToBean(CcbvipT2719ResponseRoot.class, xml.getBytes());
         System.out.println(msg);
-        System.out.println(test.beanToXml(ServerT2719ResponseRoot.class, msg));
+        System.out.println(test.beanToXml(CcbvipT2719ResponseRoot.class, msg));
     }
 
     public static void main(String... argv) throws JAXBException {

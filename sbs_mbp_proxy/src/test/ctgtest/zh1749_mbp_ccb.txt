@@ -1,0 +1,60 @@
+Time:18:46:28(hh:mm:ss):
+send:id=18462812,
+<?xml version="1.0"?>
+<Root>
+<Head>
+<Version>01</Version>
+<TxCode>4868</TxCode>
+<FuncCode>000</FuncCode>
+<Channel>0002</Channel>
+<SubCenterId>0371</SubCenterId>
+<NodeId>0371000000000261</NodeId>
+<TellerId>060830</TellerId>
+<TxSeqId>18462812</TxSeqId>
+<TxDate>20141016</TxDate>
+<TxTime>184628</TxTime>
+<UserId>0371000000000261</UserId>
+</Head>
+<Body>
+<TxDate>20141016</TxDate>
+<OperatorUserId>0371000000000261</OperatorUserId>
+<CoSeqId>18410611</CoSeqId>
+</Body>
+</Root>
+
+
+Time:18:46:30(hh:mm:ss):
+recv:id=18462812,<?xml version="1.0"?>
+<Root>
+<Head>
+    <Version>01</Version>
+    <TxCode>4868</TxCode>
+    <FuncCode>100</FuncCode>
+    <Channel>0002</Channel>
+    <SubCenterId>0371</SubCenterId>
+    <NodeId>0371000000000261</NodeId>
+    <TellerId>060830</TellerId>
+    <TxSeqId>18462812</TxSeqId>
+    <TxDate>20141016</TxDate>
+    <TxTime>184628</TxTime>
+    <UserId>0371000000000261</UserId>
+  </Head>
+  <Body>
+    <CoSeqId>18410611</CoSeqId>
+    <OperatorUserId>0371000000000261</OperatorUserId>
+    <OutBranchName>中国建设银行海尔路支行营业部</OutBranchName>
+    <OutDepId>37199</OutDepId>
+    <OutAcctId>37101985510050404002</OutAcctId>
+    <OutAcctName>公司某某</OutAcctName>
+    <InBranchName>泌阳县农村信用合作社联合社</InBranchName>
+    <InDepId>00000</InDepId>
+    <InBranchId>402511301018</InBranchId>
+    <InAcctId>11000071209595027012</InAcctId>
+    <InAcctName>泌阳县新盛电器维修有限公司</InAcctName>
+    <TxAmount>000000000000000101</TxAmount>
+    <TxnEndFlag>1</TxnEndFlag>
+    <RespMsg>记账成功</RespMsg>
+    <RespCode>M0001</RespCode>
+    <CurCode>CNY</CurCode>
+  </Body>
+</Root>

@@ -1,0 +1,37 @@
+===[10-16 18:46:28.643][pool-1-thread-1:9195] DEBUG org.fbi.mbp.proxy.SbsToMbpMsgHandler - Client request body:
+<?xml version="1.0" encoding="GBK"?>
+<root>
+<Head>
+<OpBankCode>105</OpBankCode>
+<OpName>QueryResult</OpName>
+<OpEntID>SBS</OpEntID>
+<OpDate>20141016</OpDate>
+<OpID>8002014101600001</OpID>
+</Head>
+<Param>
+<TransDate>20141016</TransDate>
+<EnterpriseSerial>1300000000000054</EnterpriseSerial>
+<Reserved1></Reserved1>
+<Reserved2></Reserved2>
+<Reserved3></Reserved3>
+<Reserved4></Reserved4>
+</Param>
+</root>
+
+===[10-16 18:46:30.304][pool-1-thread-1:10856] DEBUG org.fbi.mbp.proxy.SbsToMbpMsgHandler - Remote server response body:
+<?xml version="1.0" encoding="GB2312"?>
+<root>
+<Head>
+<OpRetCode>0</OpRetCode>
+<OpRetMsg>SUCCESS</OpRetMsg>
+</Head>
+<Param>
+<Result>0</Result>
+<BankSerial>18410611</BankSerial>
+<Reason></Reason>
+<Reserved1></Reserved1>
+<Reserved2></Reserved2>
+<Reserved3></Reserved3>
+<Reserved4></Reserved4>
+</Param>
+</root>
