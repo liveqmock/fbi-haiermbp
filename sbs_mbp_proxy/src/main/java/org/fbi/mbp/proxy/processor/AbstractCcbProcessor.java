@@ -3,6 +3,7 @@ package org.fbi.mbp.proxy.processor;
 import org.apache.commons.lang.StringUtils;
 import org.fbi.mbp.proxy.ProjectConfigManager;
 import org.fbi.mbp.proxy.TxnContext;
+import org.fbi.xplay.SocketUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -84,17 +85,15 @@ public class AbstractCcbProcessor {
         }
     }
 
-    protected void processClientResponse(TxnContext txnContext) throws IOException {
-/*
-        byte[] sendClientBuf = SocketUtils.bytesMerger(ccbRespCommHeadBuf, ccbRespMsgBuf);
+    protected void processClientResponse(TxnContext context) throws IOException {
+        String msgLen = StringUtils.leftPad(("" + context.getResponseBuffer().length), 10, "0");
 
         //client 响应报文
-        OutputStream sendClientOs = txnContext.getClientReponseOutputStream();
-        sendClientOs.write(sendClientBuf, 0, sendClientBuf.length);
+        OutputStream sendClientOs = context.getClientReponseOutputStream();
+        byte[] buffer = SocketUtils.bytesMerger(msgLen.getBytes(),context.getResponseBuffer());
+        logger.info("Client response msg:[" + new String(buffer,"GBK") + "]");
+        sendClientOs.write(buffer);
         sendClientOs.flush();
-
-*/
-        byte[] rsponseBuffer = txnContext.getResponseBuffer();
     }
 
     //CCB 机构码转换

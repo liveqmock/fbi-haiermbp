@@ -96,65 +96,65 @@ import javax.xml.bind.annotation.*;
 public class TransactRequestParam  {
 
     @XmlElement(name = "ToAccount", required = true)
-    protected String toAccount;
+    protected String toAccount="";
     @XmlElement(name = "ToName", required = true)
-    protected String toName;
+    protected String toName="";
     @XmlElement(name = "ToBank", required = true)
-    protected String toBank;
+    protected String toBank="";
     @XmlElement(name = "ToReserved1", required = true)
-    protected String toReserved1;
+    protected String toReserved1="";
     @XmlElement(name = "ToReserved2", required = true)
-    protected String toReserved2;
+    protected String toReserved2="";
     @XmlElement(name = "ToReserved3", required = true)
-    protected String toReserved3;
+    protected String toReserved3="";
     @XmlElement(name = "ToReserved4", required = true)
-    protected String toReserved4;
+    protected String toReserved4="";
     @XmlElement(name = "FromAccount", required = true)
-    protected String fromAccount;
+    protected String fromAccount="";
     @XmlElement(name = "FromName", required = true)
-    protected String fromName;
+    protected String fromName="";
     @XmlElement(name = "FromBank", required = true)
-    protected String fromBank;
+    protected String fromBank="";
     @XmlElement(name = "FromReserved1", required = true)
-    protected String fromReserved1;
+    protected String fromReserved1="";
     @XmlElement(name = "FromReserved2", required = true)
-    protected String fromReserved2;
+    protected String fromReserved2="";
     @XmlElement(name = "FromReserved3", required = true)
-    protected String fromReserved3;
+    protected String fromReserved3="";
     @XmlElement(name = "FromReserved4", required = true)
-    protected String fromReserved4;
+    protected String fromReserved4="";
     @XmlElement(name = "EnterpriseSerial", required = true)
-    protected String enterpriseSerial;
+    protected String enterpriseSerial="";
     @XmlElement(name = "VoucherNum", required = true)
-    protected String voucherNum;
+    protected String voucherNum="";
     @XmlElement(name = "Amount", required = true)
-    protected String amount;
+    protected String amount="";
     @XmlElement(name = "Currency", required = true)
-    protected String currency;
+    protected String currency="";
     @XmlElement(name = "Usage", required = true)
-    protected String usage;
+    protected String usage="";
     @XmlElement(name = "TransDate", required = true)
-    protected String transDate;
+    protected String transDate="";
     @XmlElement(name = "System", required = true)
-    protected String system;
+    protected String system="";
     @XmlElement(name = "Bank", required = true)
-    protected String bank;
+    protected String bank="";
     @XmlElement(name = "Local", required = true)
-    protected String local;
+    protected String local="";
     @XmlElement(name = "Internal", required = true)
-    protected String internal;
+    protected String internal="";
     @XmlElement(name = "Public", required = true)
-    protected String _public;
+    protected String _public="";
     @XmlElement(name = "Speed", required = true)
-    protected String speed;
+    protected String speed="";
     @XmlElement(name = "Reserved1", required = true)
-    protected String reserved1;
+    protected String reserved1="";
     @XmlElement(name = "Reserved2", required = true)
-    protected String reserved2;
+    protected String reserved2="";
     @XmlElement(name = "Reserved3", required = true)
-    protected String reserved3;
+    protected String reserved3="";
     @XmlElement(name = "Reserved4", required = true)
-    protected String reserved4;
+    protected String reserved4="";
 
     /**
      * Gets the value of the toAccount property.

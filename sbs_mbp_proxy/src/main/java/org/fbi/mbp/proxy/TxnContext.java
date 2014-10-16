@@ -8,8 +8,13 @@ import java.util.HashMap;
  */
 public class TxnContext {
     private String projectRootDir;
+
+    //64字节通讯报文头
+    private byte[] requestRouteHeadBuffer = null;
+
     private byte[] requestBuffer = null;
     private byte[] responseBuffer = null;
+
     private OutputStream clientReponseOutputStream = null;
     private HashMap<String,String> ccbRouterConfig = new HashMap<>();
 
@@ -43,6 +48,14 @@ public class TxnContext {
 
     public void setClientReponseOutputStream(OutputStream clientReponseOutputStream) {
         this.clientReponseOutputStream = clientReponseOutputStream;
+    }
+
+    public byte[] getRequestRouteHeadBuffer() {
+        return requestRouteHeadBuffer;
+    }
+
+    public void setRequestRouteHeadBuffer(byte[] requestRouteHeadBuffer) {
+        this.requestRouteHeadBuffer = requestRouteHeadBuffer;
     }
 
     public String getCcbRouterConfigByKey(String key) {

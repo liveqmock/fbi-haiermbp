@@ -1,5 +1,9 @@
 package org.fbi.mbp.proxy.utils;
 
+import org.fbi.mbp.proxy.domain.ccb.t2719response.ServerT2719ResponseRoot;
+import org.fbi.mbp.proxy.domain.sbs.ClientResponseHead;
+import org.fbi.mbp.proxy.domain.sbs.transactreponse.TransactResponseParam;
+import org.fbi.mbp.proxy.domain.sbs.transactreponse.TransactResponseRoot;
 import org.fbi.mbp.proxy.domain.sbs.transactrequest.TransactRequestRoot;
 
 import javax.xml.bind.JAXBContext;
@@ -46,7 +50,7 @@ public class JaxbHelper {
         }
     }
 
-    public static void main(String... argv) throws JAXBException {
+    private void txn_transact() throws JAXBException {
         String xml = "<?xml version=\"1.0\" encoding=\"GBK\"?>\n" +
                 "<root>\n" +
                 "<Head>\n" +
@@ -94,5 +98,70 @@ public class JaxbHelper {
         TransactRequestRoot msg =  test.xmlToBean(TransactRequestRoot.class, xml.getBytes());
         System.out.println(msg);
         System.out.println(test.beanToXml(TransactRequestRoot.class, msg));
+    }
+
+    private void txn_2719() throws JAXBException {
+//        String xml = "<?xml version=\"1.0\"?>\n" +
+        String xml = "<?xml version=\"1.0\" ?>\n" +
+                "<Root>\n" +
+                "<Head>\n" +
+                "    <Version>01</Version>\n" +
+                "    <TxCode>2719</TxCode>\n" +
+                "    <FuncCode>100</FuncCode>\n" +
+                "    <Channel>0002</Channel>\n" +
+                "    <SubCenterId>0371</SubCenterId>\n" +
+                "    <NodeId>0371000000000261</NodeId>\n" +
+                "    <TellerId>060830</TellerId>\n" +
+                "    <TxSeqId>11443400</TxSeqId>\n" +
+                "    <TxDate>20141016</TxDate>\n" +
+                "    <TxTime>114434</TxTime>\n" +
+                "    <UserId>0371000000000261</UserId>\n" +
+                "  </Head>\n" +
+                "  <Body>\n" +
+                "    <RespMsg>转帐成功!</RespMsg>\n" +
+                "    <RespCode>M0001</RespCode>\n" +
+                "  </Body>\n" +
+                "</Root>";
+
+        xml = "<?xml version=\"1.0\" encoding=\"GBK\"?>\n" +
+                "<Root>\n" +
+                "<Head>\n" +
+                "    <Version>01</Version>\n" +
+                "    <TxCode>2719</TxCode>\n" +
+                "    <FuncCode>100</FuncCode>\n" +
+                "    <Channel>0002</Channel>\n" +
+                "    <SubCenterId>0371</SubCenterId>\n" +
+                "    <NodeId>0371000000000261</NodeId>\n" +
+                "    <TellerId>060830</TellerId>\n" +
+                "    <TxSeqId>11443400</TxSeqId>\n" +
+                "    <TxDate>20141016</TxDate>\n" +
+                "    <TxTime>153742</TxTime>\n" +
+                "    <UserId>0371000000000261</UserId>\n" +
+                "  </Head>\n" +
+                "  <Body>\n" +
+                "    <RespMsg>[#客户方交易流水号]当天不能重复</RespMsg>\n" +
+                "    <RespCode>E0000</RespCode>\n" +
+                "  </Body>\n" +
+                "</Root>";
+
+        JaxbHelper test = new JaxbHelper();
+        ServerT2719ResponseRoot msg =  test.xmlToBean(ServerT2719ResponseRoot.class, xml.getBytes());
+        System.out.println(msg);
+        System.out.println(test.beanToXml(ServerT2719ResponseRoot.class, msg));
+    }
+
+    public static void main(String... argv) throws JAXBException {
+        JaxbHelper test = new JaxbHelper();
+//        test.txn_transact();
+//        test.txn_2719();
+
+        TransactResponseRoot clientRespBean = new TransactResponseRoot();
+        ClientResponseHead clientResponseHead = new ClientResponseHead();
+        TransactResponseParam clientResponseParam = new TransactResponseParam();
+        clientRespBean.setHead(clientResponseHead);
+        clientRespBean.setParam(clientResponseParam);
+
+        clientResponseParam.setReserved1("");
+        System.out.println(test.beanToXml(TransactResponseRoot.class, clientRespBean));
     }
 }

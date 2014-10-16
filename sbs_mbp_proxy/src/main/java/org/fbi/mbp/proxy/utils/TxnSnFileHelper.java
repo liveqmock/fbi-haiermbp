@@ -14,12 +14,13 @@ import java.util.List;
 public class TxnSnFileHelper {
     private static Logger logger = LoggerFactory.getLogger(TxnSnFileHelper.class);
 
-    public synchronized static boolean isRepeatSn(String fileName, String sn) {
+    public synchronized static String getRepeatClientTxnSn(String fileName, String sn) {
         if (fileName == null || "".equals(fileName)) {
             throw new IllegalArgumentException("文件名不能为空.");
         }
 
         boolean isFound = false;
+        String tpsTxnSn = null;
         File file = new File(fileName);
         BufferedReader br = null;
         try {
@@ -28,12 +29,13 @@ public class TxnSnFileHelper {
             while ((line = br.readLine()) != null) {
                 String[] fields = line.split(":");
                 if (sn.equals(fields[0])) {
+                    tpsTxnSn = fields[1];
                     isFound = true;
                     break;
                 }
             }
         } catch (FileNotFoundException e) {
-            return false;
+            return null;
             //TODO
 //            logger.error("文件不存在", e);
 //            throw new RuntimeException(e);
@@ -49,7 +51,7 @@ public class TxnSnFileHelper {
                 }
             }
         }
-        return isFound;
+        return tpsTxnSn;
     }
 
     public synchronized static List<String> readFileByLines(String fileName) {

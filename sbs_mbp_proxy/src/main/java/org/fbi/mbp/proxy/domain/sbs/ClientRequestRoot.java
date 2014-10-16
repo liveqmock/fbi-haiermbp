@@ -7,17 +7,17 @@ import javax.xml.bind.annotation.XmlTransient;
 public abstract class ClientRequestRoot {
 
     @XmlElement(name = "Head", required = true)
-    protected ClientReqestHead head;
+    protected ClientRequestHead head;
 
     /**
      * Gets the value of the head property.
      * 
      * @return
      *     possible object is
-     *     {@link ClientReqestHead }
+     *     {@link ClientRequestHead }
      *     
      */
-    public ClientReqestHead getHead() {
+    public ClientRequestHead getHead() {
         return head;
     }
 
@@ -26,10 +26,10 @@ public abstract class ClientRequestRoot {
      * 
      * @param value
      *     allowed object is
-     *     {@link ClientReqestHead }
+     *     {@link ClientRequestHead }
      *     
      */
-    public void setHead(ClientReqestHead value) {
+    public void setHead(ClientRequestHead value) {
         this.head = value;
     }
 

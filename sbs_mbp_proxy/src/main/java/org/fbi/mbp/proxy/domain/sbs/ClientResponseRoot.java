@@ -14,7 +14,7 @@ public abstract class ClientResponseRoot {
      *
      * @return
      *     possible object is
-     *     {@link org.fbi.mbp.proxy.domain.sbs.ClientReqestHead }
+     *     {@link ClientRequestHead }
      *
      */
     public ClientResponseHead getHead() {
@@ -26,7 +26,7 @@ public abstract class ClientResponseRoot {
      *
      * @param value
      *     allowed object is
-     *     {@link org.fbi.mbp.proxy.domain.sbs.ClientReqestHead }
+     *     {@link ClientRequestHead }
      *     
      */
     public void setHead(ClientResponseHead value) {

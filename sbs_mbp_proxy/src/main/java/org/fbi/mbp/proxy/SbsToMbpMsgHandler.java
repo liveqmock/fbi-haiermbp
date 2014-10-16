@@ -24,7 +24,10 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * Created by zhanrui on 2014/9/23.
- * 报文转换
+ * 业务处理主进程
+ * SBS-MBP报文协议   64字节通讯报文头 + 10字节长度（通讯报文体长度） +  通讯报文体
+ *                  64字节通讯报文头 = 32字节交易号 + 16字节客户端名称 + 16字节银行代码
+ *                                 例：{txnCode='Transact', clientName='SBS', bankCode='105'}
  */
 public  class SbsToMbpMsgHandler implements ChannelHandler {
     private final String projectRootDir = ProjectConfigManager.getInstance().getStringProperty("prj_root_dir");
@@ -118,8 +121,13 @@ public  class SbsToMbpMsgHandler implements ChannelHandler {
                 Class processType = Class.forName("org.fbi.mbp.proxy.processor." + txnCode + "Processor");
                 TxnProcessor processor = (TxnProcessor) processType.newInstance();
 
-                TxnContext txnContext = initTxnContext(out, inMsgBuf);
-                processor.process(txnContext);
+                TxnContext txnContext = initTxnContext(out, inRouteHeaderBuf, inMsgBuf);
+                try {
+                    processor.process(txnContext);
+                } catch (Exception e) {
+                    //TODO
+                    logger.error("交易处理失败.", e);
+                }
             } else {
                 byte[] requestBuffer = SocketUtils.bytesMerger(inRouteHeaderBuf, SocketUtils.bytesMerger(inMsgLenBuf, inMsgBuf));
                 handleProxy(requestBuffer, out);
@@ -236,10 +244,18 @@ public  class SbsToMbpMsgHandler implements ChannelHandler {
         }
     }
 
-    private TxnContext initTxnContext(OutputStream out, byte[] requestBuffer) {
+    /**
+     *
+     * @param out
+     * @param requestRouteHeadBuffer   SBS-MBP之间64字节通讯报文头
+     * @param requestBuffer SBS-MBP之间通讯报文体
+     * @return
+     */
+    private TxnContext initTxnContext(OutputStream out,byte[] requestRouteHeadBuffer, byte[] requestBuffer) {
         TxnContext txnContext = new TxnContext();
         txnContext.setProjectRootDir(this.projectRootDir);
         txnContext.setCcbRouterConfig(ccbRouterConfig);
+        txnContext.setRequestRouteHeadBuffer(requestRouteHeadBuffer);
         txnContext.setRequestBuffer(requestBuffer);
         txnContext.setClientReponseOutputStream(out);
         return txnContext;

@@ -9,9 +9,6 @@
 package org.fbi.mbp.proxy.domain.sbs;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import java.math.BigInteger;
 
 
 /**
@@ -43,11 +40,11 @@ import java.math.BigInteger;
 public class ClientResponseHead {
 
     @XmlElement(name = "OpRetCode", required = true)
-    protected BigInteger opRetCode;
+    protected String opRetCode="";
     @XmlElement(name = "OpRetMsg", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NCName")
-    protected String opRetMsg;
+//    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+//    @XmlSchemaType(name = "NCName")
+    protected String opRetMsg="";
 
     /**
      * Gets the value of the opRetCode property.
@@ -57,7 +54,7 @@ public class ClientResponseHead {
      *     {@link java.math.BigInteger }
      *     
      */
-    public BigInteger getOpRetCode() {
+    public String getOpRetCode() {
         return opRetCode;
     }
 
@@ -69,7 +66,7 @@ public class ClientResponseHead {
      *     {@link java.math.BigInteger }
      *     
      */
-    public void setOpRetCode(BigInteger value) {
+    public void setOpRetCode(String value) {
         this.opRetCode = value;
     }
 

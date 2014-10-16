@@ -52,17 +52,17 @@ import javax.xml.bind.annotation.XmlType;
 public class TransactResponseParam {
 
     @XmlElement(name = "Result", required = true)
-    protected String result;
+    protected String result="";
     @XmlElement(name = "BankSerial", required = true)
-    protected String bankSerial;
+    protected String bankSerial="";
     @XmlElement(name = "Reserved1", required = true)
-    protected String reserved1;
+    protected String reserved1="";
     @XmlElement(name = "Reserved2", required = true)
-    protected String reserved2;
+    protected String reserved2="";
     @XmlElement(name = "Reserved3", required = true)
-    protected String reserved3;
+    protected String reserved3="";
     @XmlElement(name = "Reserved4", required = true)
-    protected String reserved4;
+    protected String reserved4="";
 
     /**
      * Gets the value of the result property.

@@ -3,9 +3,12 @@ package org.fbi.mbp.proxy.processor;
 import org.fbi.mbp.proxy.TxnContext;
 import org.fbi.mbp.proxy.TxnProcessor;
 import org.fbi.mbp.proxy.domain.ccb.ServerMsgHead;
-import org.fbi.mbp.proxy.domain.ccb.t2719request.ServerT2719RequestRoot;
 import org.fbi.mbp.proxy.domain.ccb.t2719request.ServerT2719RequestBody;
+import org.fbi.mbp.proxy.domain.ccb.t2719request.ServerT2719RequestRoot;
 import org.fbi.mbp.proxy.domain.ccb.t2719response.ServerT2719ResponseRoot;
+import org.fbi.mbp.proxy.domain.sbs.ClientResponseHead;
+import org.fbi.mbp.proxy.domain.sbs.transactreponse.TransactResponseParam;
+import org.fbi.mbp.proxy.domain.sbs.transactreponse.TransactResponseRoot;
 import org.fbi.mbp.proxy.domain.sbs.transactrequest.TransactRequestParam;
 import org.fbi.mbp.proxy.domain.sbs.transactrequest.TransactRequestRoot;
 import org.fbi.mbp.proxy.utils.JaxbHelper;
@@ -47,9 +50,10 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
 
             //与第三方Server通讯
             String tpsRespXml = processServerRequest(context, "2719", ccbReqXml);
-            logger.info("CCB Response xmlmsg" + tpsRespXml);
+            logger.info("CCB Response xmlmsg:[" + tpsRespXml + "]");
 
             //转换4：Server Response Xml -> Server Response Bean
+            tpsRespXml = "<?xml version=\"1.0\" encoding=\"GBK\"?>" + tpsRespXml.substring(21);
             ServerT2719ResponseRoot servRespBean =  jaxbHelper.xmlToBean(ServerT2719ResponseRoot.class, tpsRespXml.getBytes("GBK"));
 
             //检查逻辑
@@ -59,15 +63,35 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
             }
 
             //转换5：Server Response Bean -> Client Response Bean
+            TransactResponseRoot clientRespBean = new TransactResponseRoot();
+            ClientResponseHead clientResponseHead = new ClientResponseHead();
+            TransactResponseParam clientResponseParam = new TransactResponseParam();
+            clientRespBean.setHead(clientResponseHead);
+            clientRespBean.setParam(clientResponseParam);
 
+            //响应码转换 重要！
+            String tpsRespCode = servRespBean.getBody().getRespCode();
+            String clientRespCode = "9"; //默认为不明错误
+            if ("M0001".equals(tpsRespCode)) {
+                clientRespCode = "0";
+            }
+            clientResponseHead.setOpRetCode(clientRespCode);
+            clientResponseHead.setOpRetMsg(servRespBean.getBody().getRespMsg());
+
+            clientResponseParam.setResult(clientRespCode);
+            clientResponseParam.setResult("0");
+            clientResponseParam.setBankSerial(servRespBean.getHead().getTxSeqId());
 
             //转换6：Client Response Bean -> Client Response Xml
+            String clientRespXml = "<?xml version=\"1.0\" encoding=\"GB2312\"?>" + jaxbHelper.beanToXml(TransactResponseRoot.class, clientRespBean);
+            logger.info("Client Response xmlmsg:[" + clientRespXml+ "]");
 
             //Client响应
-            //servReqHead.setTxSeqId(clientReqRoot.getHead().getOpBankCode());
-
+            context.setResponseBuffer(clientRespXml.getBytes("GBK"));
+            processClientResponse(context);
         } catch (Exception e) {
-            e.printStackTrace();
+            //TODO
+            throw new RuntimeException(e);
         }
     }
 
@@ -76,23 +100,23 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
         String txnDate = clientReqestBean.getHead().getOpDate();
         String filename = context.getProjectRootDir() + "/ccbserials/" + txnDate + ".txt";
         //检查本地文件 流水号是否重复
-        String clientSn = clientReqestBean.getHead().getOpID();
-        if (TxnSnFileHelper.isRepeatSn(filename, clientSn)) {
-            //组错误信息报文
-            logger.info("流水号重复:");
-            return null;
+        String clientTxnSn = clientReqestBean.getHead().getOpID();
+        String tpsTxnSn = TxnSnFileHelper.getRepeatClientTxnSn(filename, clientTxnSn);
+        if (tpsTxnSn != null) {
+            //logger.info("流水号重复:");
+            return tpsTxnSn;
         }
 
         //流水号转换 并保存
         SimpleDateFormat sdf = new SimpleDateFormat("HHmmssSSS");
-        String ccbSn = sdf.format(new Date()).substring(0, 8);
-        String record = clientSn + ":" + ccbSn;
+        tpsTxnSn = sdf.format(new Date()).substring(0, 8);
+        String record = clientTxnSn + ":" + tpsTxnSn;
         TxnSnFileHelper.writeFileIsAppend(filename, record);
-        return ccbSn;
+        return tpsTxnSn;
     }
 
     //转换成 CCB Bean
-    private void assembleServerRequestRoot(TxnContext context, TransactRequestRoot clientReqestBean, ServerT2719RequestRoot servReqRoot, String ccbSn) {
+    private void assembleServerRequestRoot(TxnContext context, TransactRequestRoot clientReqestBean, ServerT2719RequestRoot servReqRoot, String tpsTxnSn) {
         ServerMsgHead servReqHead = new ServerMsgHead();
         ServerT2719RequestBody servReqBody = new ServerT2719RequestBody();
         //ServerT2719RequestRoot servReqRoot = new ServerT2719RequestRoot();
@@ -106,13 +130,13 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
         servReqHead.setSubCenterId(context.getCcbRouterConfigByKey("subcenterid"));
         servReqHead.setNodeId(context.getCcbRouterConfigByKey("nodeid"));
         servReqHead.setTellerId(context.getCcbRouterConfigByKey("tellerid"));
-        servReqHead.setTxSeqId(ccbSn);
+        servReqHead.setTxSeqId(tpsTxnSn);
         servReqHead.setTxDate(clientReqestBean.getHead().getOpDate());
         servReqHead.setTxTime(new SimpleDateFormat("HHmmss").format(new Date()));
         String userid = context.getCcbRouterConfigByKey("userid");
         servReqHead.setUserId(userid);
 
-        servReqBody.setCoSeqId(ccbSn);
+        servReqBody.setCoSeqId(tpsTxnSn);
         servReqBody.setOperatorUserId(userid);
         servReqBody.setOutUserId(userid);
         servReqBody.setOutDepId(getCcbBranchIdCode(context.getCcbRouterConfigByKey("branchid")));
@@ -126,7 +150,7 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
         }
         servReqBody.setOutAcctId(outAcctId);
         servReqBody.setOutAcctName(param.getFromName());
-        servReqBody.setOutBranchName(param.getBank());
+        servReqBody.setOutBranchName(param.getFromBank());
 
         String[] quotaFields = param.getReserved1().split(",");
         servReqBody.setQuotaAcctId(quotaFields[0]);
