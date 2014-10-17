@@ -1,9 +1,6 @@
 package org.fbi.mbp.proxy.utils;
 
 import org.fbi.mbp.proxy.domain.ccbvip.t2719response.CcbvipT2719ResponseRoot;
-import org.fbi.mbp.proxy.domain.sbs.ClientResponseHead;
-import org.fbi.mbp.proxy.domain.sbs.transactreponse.TransactResponseParam;
-import org.fbi.mbp.proxy.domain.sbs.transactreponse.TransactResponseRoot;
 import org.fbi.mbp.proxy.domain.sbs.transactrequest.TransactRequestRoot;
 
 import javax.xml.bind.JAXBContext;
@@ -94,6 +91,8 @@ public class JaxbHelper {
                 "</Param>\n" +
                 "</root>";
 
+        xml= "<?xml version=\"1.0\" encoding=\"GBK\"?><root><Head><OpBankCode>105</OpBankCode><OpName>Transact</OpName><OpEntID>SBS</OpEntID><OpDate>20141017</OpDate><OpID>1100000276253631</OpID></Head><Param><ToAccount>44201542000052511031</ToAccount><ToName>深圳市富意达电器有限公司</ToName><ToBank>中国建设银行深圳市龙岗支行</ToBank><ToReserved1>105584000030</ToReserved1><ToReserved2>105584000030</ToReserved2><ToReserved3></ToReserved3><ToReserved4></ToReserved4><FromAccount>37101985510050404002</FromAccount><FromName>海尔财务公司</FromName><FromBank>青岛建行</FromBank><FromReserved1>105452004038</FromReserved1><FromReserved2>105452004038</FromReserved2><FromReserved3></FromReserved3><FromReserved4></FromReserved4><EnterpriseSerial>1100000276253631</EnterpriseSerial><VoucherNum></VoucherNum><Amount>43800</Amount><Currency>CNY</Currency><Usage>材料</Usage><TransDate>20141017</TransDate><System>1</System><Bank>0</Bank><Local>1</Local><Internal>0</Internal><Public>0</Public><Speed>1</Speed><Reserved1>801000243602012001,重庆新日日顺家电销售有限公司深圳分公司</Reserved1><Reserved2></Reserved2><Reserved3></Reserved3><Reserved4></Reserved4></Param></root>";
+
         JaxbHelper test = new JaxbHelper();
         TransactRequestRoot msg =  test.xmlToBean(TransactRequestRoot.class, xml.getBytes());
         System.out.println(msg);
@@ -124,24 +123,26 @@ public class JaxbHelper {
                 "</Root>";
 
         xml = "<?xml version=\"1.0\" encoding=\"GBK\"?>\n" +
-                "<Root>\n" +
+               "<Root>\n" +
                 "<Head>\n" +
-                "    <Version>01</Version>\n" +
-                "    <TxCode>2719</TxCode>\n" +
-                "    <FuncCode>100</FuncCode>\n" +
-                "    <Channel>0002</Channel>\n" +
-                "    <SubCenterId>0371</SubCenterId>\n" +
-                "    <NodeId>0371000000000261</NodeId>\n" +
-                "    <TellerId>060830</TellerId>\n" +
-                "    <TxSeqId>11443400</TxSeqId>\n" +
-                "    <TxDate>20141016</TxDate>\n" +
-                "    <TxTime>153742</TxTime>\n" +
-                "    <UserId>0371000000000261</UserId>\n" +
-                "  </Head>\n" +
-                "  <Body>\n" +
-                "    <RespMsg>[#客户方交易流水号]当天不能重复</RespMsg>\n" +
-                "    <RespCode>E0000</RespCode>\n" +
-                "  </Body>\n" +
+                "<Version>01</Version>\n" +
+                "<TxCode>2719</TxCode>\n" +
+                "<FuncCode>000</FuncCode>\n" +
+                "<Channel>0005</Channel>\n" +
+                "<SubCenterId>0371</SubCenterId>\n" +
+                "<UserId>0371000000000261</UserId>\n" +
+                "<TellerId>060830</TellerId>\n" +
+                "<TxSeqId>09270898</TxSeqId>\n" +
+                "<TxDate>20141017</TxDate>\n" +
+                "<TxTime>092706</TxTime>\n" +
+                "<NodeId>0371000000000261</NodeId>\n" +
+                "</Head>\n" +
+                "<Body>\n" +
+                "<RespCode>M0001</RespCode>\n" +
+                "<RespMsg>交易受理成功，转银行落地处理</RespMsg>\n" +
+                "<TxnEndFlag>0</TxnEndFlag>\n" +
+                "<TxnEndFlag2>0</TxnEndFlag2>\n" +
+                "</Body>\n" +
                 "</Root>";
 
         JaxbHelper test = new JaxbHelper();
@@ -152,9 +153,10 @@ public class JaxbHelper {
 
     public static void main(String... argv) throws JAXBException {
         JaxbHelper test = new JaxbHelper();
-//        test.txn_transact();
+        test.txn_transact();
 //        test.txn_2719();
 
+/*
         TransactResponseRoot clientRespBean = new TransactResponseRoot();
         ClientResponseHead clientResponseHead = new ClientResponseHead();
         TransactResponseParam clientResponseParam = new TransactResponseParam();
@@ -163,5 +165,6 @@ public class JaxbHelper {
 
         clientResponseParam.setReserved1("");
         System.out.println(test.beanToXml(TransactResponseRoot.class, clientRespBean));
+*/
     }
 }

@@ -3,6 +3,7 @@ package org.fbi.mbp.proxy.processor;
 import org.apache.commons.lang.StringUtils;
 import org.fbi.mbp.proxy.ProjectConfigManager;
 import org.fbi.mbp.proxy.TxnContext;
+import org.fbi.mbp.proxy.domain.ccbvip.CcbvipMsgHead;
 import org.fbi.xplay.SocketUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,8 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by zhanrui on 2014/10/11.
@@ -25,7 +28,6 @@ public class AbstractCcbProcessor {
     //private final int ccbWinbridgePort = ProjectConfigManager.getInstance().getIntProperty("ccb_winbridge_server_port");
 
     private int timeout = ProjectConfigManager.getInstance().getIntProperty("remote_server_timeout"); //默认超时时间：ms  连接超时与读超时统一
-    private int warningtime = ProjectConfigManager.getInstance().getIntProperty("remote_server_txn_warning_time"); //长交易时间预警阈值：ms
 
     private static int MSG_HEADER_LEN = 111;   //header 长度
 
@@ -105,5 +107,21 @@ public class AbstractCcbProcessor {
             return "00000";
         }
 
+    }
+
+    protected  CcbvipMsgHead generateTpsRequestHeaderBean(TxnContext context, String txnDate, String txnCode, String tpsTxnSn){
+        CcbvipMsgHead servReqHead = new CcbvipMsgHead();
+        servReqHead.setVersion(context.getCcbRouterConfigByKey("version"));
+        servReqHead.setTxCode(txnCode);
+        servReqHead.setFuncCode("000");
+        servReqHead.setChannel(context.getCcbRouterConfigByKey("channel"));
+        servReqHead.setSubCenterId(context.getCcbRouterConfigByKey("subcenterid"));
+        servReqHead.setNodeId(context.getCcbRouterConfigByKey("nodeid"));
+        servReqHead.setTellerId(context.getCcbRouterConfigByKey("tellerid"));
+        servReqHead.setTxSeqId(tpsTxnSn);
+        servReqHead.setTxDate(txnDate);
+        servReqHead.setTxTime(new SimpleDateFormat("HHmmss").format(new Date()));
+        servReqHead.setUserId(context.getCcbRouterConfigByKey("userid"));
+        return servReqHead;
     }
 }

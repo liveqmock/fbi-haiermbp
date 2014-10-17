@@ -1,8 +1,8 @@
 package org.fbi.mbp.proxy.processor;
 
+import org.apache.commons.lang.StringUtils;
 import org.fbi.mbp.proxy.TxnContext;
 import org.fbi.mbp.proxy.TxnProcessor;
-import org.fbi.mbp.proxy.domain.ccbvip.CcbvipMsgHead;
 import org.fbi.mbp.proxy.domain.ccbvip.t2719request.CcbvipT2719RequestBody;
 import org.fbi.mbp.proxy.domain.ccbvip.t2719request.CcbvipT2719RequestRoot;
 import org.fbi.mbp.proxy.domain.ccbvip.t2719response.CcbvipT2719ResponseRoot;
@@ -16,6 +16,7 @@ import org.fbi.mbp.proxy.utils.TxnSnFileHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -29,6 +30,12 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
 
     @Override
     public void process(TxnContext context) {
+        TransactResponseRoot clientRespBean = new TransactResponseRoot();
+        ClientResponseHead clientResponseHead = new ClientResponseHead();
+        TransactResponseParam clientResponseParam = new TransactResponseParam();
+        clientRespBean.setHead(clientResponseHead);
+        clientRespBean.setParam(clientResponseParam);
+
         try {
             //转换1：Client Request XML -> Cleint Request Bean
             JaxbHelper jaxbHelper = new JaxbHelper();
@@ -42,14 +49,13 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
             }
 
             //转换2：Client Request Bean -> Server Request Bean
-            CcbvipT2719RequestRoot servReqBean =  new CcbvipT2719RequestRoot();
-            assembleServerRequestRoot(context, clientReqBean, servReqBean, tpsTxnSn);
+            CcbvipT2719RequestRoot servReqBean =  generateServerRequestRoot(context, clientReqBean, tpsTxnSn);
 
             //转换3：Server Request Bean -> Server Request Xml
             String ccbReqXml = jaxbHelper.beanToXml(CcbvipT2719RequestRoot.class, servReqBean);
 
             //与第三方Server通讯
-            String tpsRespXml = processServerRequest(context, "2719", ccbReqXml);
+            String tpsRespXml = processServerRequest(context, TPS_TXNCODE, ccbReqXml);
             logger.info("CCB Response xmlmsg:[" + tpsRespXml + "]");
 
             //转换4：Server Response Xml -> Server Response Bean
@@ -63,23 +69,16 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
             }
 
             //转换5：Server Response Bean -> Client Response Bean
-            TransactResponseRoot clientRespBean = new TransactResponseRoot();
-            ClientResponseHead clientResponseHead = new ClientResponseHead();
-            TransactResponseParam clientResponseParam = new TransactResponseParam();
-            clientRespBean.setHead(clientResponseHead);
-            clientRespBean.setParam(clientResponseParam);
-
             //响应码转换 重要！
             String tpsRespCode = servRespBean.getBody().getRespCode();
-            String clientRespCode = "9"; //默认为不明错误
+            String clientRespCode = "0"; //CCB 完成
             if ("M0001".equals(tpsRespCode)) {
-                clientRespCode = "0";
+                clientResponseParam.setResult("0");
+            } else {
+                clientResponseParam.setResult("1");
             }
             clientResponseHead.setOpRetCode(clientRespCode);
             clientResponseHead.setOpRetMsg(servRespBean.getBody().getRespMsg());
-
-            clientResponseParam.setResult(clientRespCode);
-            clientResponseParam.setResult("0");
             clientResponseParam.setBankSerial(servRespBean.getHead().getTxSeqId());
 
             //转换6：Client Response Bean -> Client Response Xml
@@ -90,8 +89,26 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
             context.setResponseBuffer(clientRespXml.getBytes("GBK"));
             processClientResponse(context);
         } catch (Exception e) {
-            //TODO
-            throw new RuntimeException(e);
+            logger.error("交易处理异常", e);
+
+            //与CCB通讯超时等异常，返回retcode=0，result=非0  SBS会识别为1002->超时
+            clientResponseHead.setOpRetCode("0");
+            String msg = StringUtils.substring(e.getMessage(), 0, 20);
+            clientResponseHead.setOpRetMsg(msg);
+            clientResponseParam.setResult("1");
+
+            JaxbHelper jaxbHelper = new JaxbHelper();
+            String clientRespXml = "<?xml version=\"1.0\" encoding=\"GB2312\"?>" + jaxbHelper.beanToXml(TransactResponseRoot.class, clientRespBean);
+            logger.info("Client Response xmlmsg:[" + clientRespXml+ "]");
+
+            //Client响应
+            try {
+                context.setResponseBuffer(clientRespXml.getBytes("GBK"));
+                processClientResponse(context);
+            } catch (IOException e1) {
+                logger.error("处理Client响应报文错误.", e);
+                //不抛异常
+            }
         }
     }
 
@@ -100,7 +117,7 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
         String txnDate = clientReqestBean.getHead().getOpDate();
         String filename = context.getProjectRootDir() + "/ccbserials/" + txnDate + ".txt";
         //检查本地文件 流水号是否重复
-        String clientTxnSn = clientReqestBean.getHead().getOpID();
+        String clientTxnSn = clientReqestBean.getParam().getEnterpriseSerial().trim();
         String tpsTxnSn = TxnSnFileHelper.getRepeatClientTxnSn(filename, clientTxnSn);
         if (tpsTxnSn != null) {
             //logger.info("流水号重复:");
@@ -116,29 +133,15 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
     }
 
     //转换成 CCB Bean
-    private void assembleServerRequestRoot(TxnContext context, TransactRequestRoot clientReqestBean, CcbvipT2719RequestRoot servReqRoot, String tpsTxnSn) {
-        CcbvipMsgHead servReqHead = new CcbvipMsgHead();
+    private CcbvipT2719RequestRoot generateServerRequestRoot(TxnContext context, TransactRequestRoot clientReqestBean,  String tpsTxnSn) {
+        CcbvipT2719RequestRoot servReqBean =  new CcbvipT2719RequestRoot();
+        servReqBean.setHead(generateTpsRequestHeaderBean(context, clientReqestBean.getHead().getOpDate(), TPS_TXNCODE, tpsTxnSn));
+
         CcbvipT2719RequestBody servReqBody = new CcbvipT2719RequestBody();
-        //ServerT2719RequestRoot servReqRoot = new ServerT2719RequestRoot();
-        servReqRoot.setHead(servReqHead);
-        servReqRoot.setBody(servReqBody);
-
-        servReqHead.setVersion(context.getCcbRouterConfigByKey("version"));
-        servReqHead.setTxCode(TPS_TXNCODE);
-        servReqHead.setFuncCode("000");
-        servReqHead.setChannel(context.getCcbRouterConfigByKey("channel"));
-        servReqHead.setSubCenterId(context.getCcbRouterConfigByKey("subcenterid"));
-        servReqHead.setNodeId(context.getCcbRouterConfigByKey("nodeid"));
-        servReqHead.setTellerId(context.getCcbRouterConfigByKey("tellerid"));
-        servReqHead.setTxSeqId(tpsTxnSn);
-        servReqHead.setTxDate(clientReqestBean.getHead().getOpDate());
-        servReqHead.setTxTime(new SimpleDateFormat("HHmmss").format(new Date()));
-        String userid = context.getCcbRouterConfigByKey("userid");
-        servReqHead.setUserId(userid);
-
+        servReqBean.setBody(servReqBody);
         servReqBody.setCoSeqId(tpsTxnSn);
-        servReqBody.setOperatorUserId(userid);
-        servReqBody.setOutUserId(userid);
+        servReqBody.setOperatorUserId(context.getCcbRouterConfigByKey("userid"));
+        servReqBody.setOutUserId(context.getCcbRouterConfigByKey("userid"));
         servReqBody.setOutDepId(getCcbBranchIdCode(context.getCcbRouterConfigByKey("branchid")));
 
         //确认付款账号 与配置文件一直
@@ -174,5 +177,7 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
 
         servReqBody.setTxAmount(param.getAmount());  //金额不做转换
         servReqBody.setMemo("代理支付");
+
+        return servReqBean;
     }
 }

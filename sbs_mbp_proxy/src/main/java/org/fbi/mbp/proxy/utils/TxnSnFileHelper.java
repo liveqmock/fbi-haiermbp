@@ -14,10 +14,14 @@ import java.util.List;
 public class TxnSnFileHelper {
     private static Logger logger = LoggerFactory.getLogger(TxnSnFileHelper.class);
 
-    public synchronized static String getRepeatClientTxnSn(String fileName, String sn) {
+    public synchronized static String getRepeatClientTxnSn(String fileName, String clientTxnsn) {
         if (fileName == null || "".equals(fileName)) {
             throw new IllegalArgumentException("文件名不能为空.");
         }
+        if (clientTxnsn == null || "".equals(clientTxnsn)) {
+            throw new IllegalArgumentException("流水号不能为空.");
+        }
+        //logger.debug("Client Request Txnsn[" +  clientTxnsn + "]");
 
         boolean isFound = false;
         String tpsTxnSn = null;
@@ -28,13 +32,14 @@ public class TxnSnFileHelper {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] fields = line.split(":");
-                if (sn.equals(fields[0])) {
+                if (clientTxnsn.equals(fields[0])) {
                     tpsTxnSn = fields[1];
                     isFound = true;
                     break;
                 }
             }
         } catch (FileNotFoundException e) {
+            logger.info("文件不存在" + fileName, e);
             return null;
             //TODO
 //            logger.error("文件不存在", e);
