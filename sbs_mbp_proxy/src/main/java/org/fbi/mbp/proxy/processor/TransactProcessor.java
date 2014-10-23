@@ -35,7 +35,7 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
         TransactResponseParam clientResponseParam = new TransactResponseParam();
         clientRespBean.setHead(clientResponseHead);
         clientRespBean.setParam(clientResponseParam);
-
+        String tpsTxnSn = "";
         try {
             //转换1：Client Request XML -> Cleint Request Bean
             JaxbHelper jaxbHelper = new JaxbHelper();
@@ -43,8 +43,8 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
             logger.info("SBS Request:" + clientReqBean);
 
             //本地业务逻辑处理
-            String tpsTxnSn = processTxn(context, clientReqBean);
-            if (tpsTxnSn == null) {
+            tpsTxnSn = processTxn(context, clientReqBean);
+            if (StringUtils.isEmpty(tpsTxnSn)) {
                 throw new RuntimeException("报文流水号转换错误");
             }
 
@@ -55,8 +55,8 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
             String ccbReqXml = jaxbHelper.beanToXml(CcbvipT2719RequestRoot.class, servReqBean);
 
             //与第三方Server通讯
-            String tpsRespXml = processServerRequest(context, TPS_TXNCODE, ccbReqXml);
-            logger.info("CCB Response xmlmsg:[" + tpsRespXml + "]");
+            String tpsRespXml = processServerRequest(context, TPS_TXNCODE, ccbReqXml, tpsTxnSn);
+            logger.info("=[" + tpsTxnSn + "]=" + "CCB Response xmlmsg:[" + tpsRespXml + "]");
 
             //转换4：Server Response Xml -> Server Response Bean
             tpsRespXml = "<?xml version=\"1.0\" encoding=\"GBK\"?>" + tpsRespXml.substring(21);
@@ -64,7 +64,7 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
 
             //检查逻辑
             if (!servReqBean.getHead().getTxSeqId().equals(servRespBean.getHead().getTxSeqId())) {
-                logger.error("响应报文流水号与请求报文流水号不符。" + tpsRespXml);
+                logger.error("=[" + tpsTxnSn + "]=" + "响应报文流水号与请求报文流水号不符。" + tpsRespXml);
                 throw new RuntimeException("响应报文流水号与请求报文流水号不符。");
             }
 
@@ -83,13 +83,13 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
 
             //转换6：Client Response Bean -> Client Response Xml
             String clientRespXml = "<?xml version=\"1.0\" encoding=\"GB2312\"?>" + jaxbHelper.beanToXml(TransactResponseRoot.class, clientRespBean);
-            logger.info("Client Response xmlmsg:[" + clientRespXml+ "]");
+            logger.info("=[" + tpsTxnSn + "]=" + "Client Response xmlmsg:[" + clientRespXml+ "]");
 
             //Client响应
             context.setResponseBuffer(clientRespXml.getBytes("GBK"));
-            processClientResponse(context);
+            processClientResponse(context, tpsTxnSn);
         } catch (Exception e) {
-            logger.error("交易处理异常", e);
+            logger.error("===[" + tpsTxnSn + "]" + "交易处理异常", e);
 
             //与CCB通讯超时等异常，返回retcode=0，result=非0  SBS会识别为1002->超时
             clientResponseHead.setOpRetCode("0");
@@ -99,12 +99,12 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
 
             JaxbHelper jaxbHelper = new JaxbHelper();
             String clientRespXml = "<?xml version=\"1.0\" encoding=\"GB2312\"?>" + jaxbHelper.beanToXml(TransactResponseRoot.class, clientRespBean);
-            logger.info("Client Response xmlmsg:[" + clientRespXml+ "]");
+            logger.info("===[" + tpsTxnSn + "]" + "Client Response xmlmsg:[" + clientRespXml+ "]");
 
             //Client响应
             try {
                 context.setResponseBuffer(clientRespXml.getBytes("GBK"));
-                processClientResponse(context);
+                processClientResponse(context, tpsTxnSn);
             } catch (IOException e1) {
                 logger.error("处理Client响应报文错误.", e);
                 //不抛异常
@@ -160,8 +160,8 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
         servReqBody.setQuotaAcctName(quotaFields[1]);
 
         //TODO
-        servReqBody.setInUserId("9999999999999999");
-        servReqBody.setInDepId("00000");
+        //servReqBody.setInUserId("9999999999999999");
+        servReqBody.setInUserId(context.getCcbRouterConfigByKey("userid"));
 
         servReqBody.setInAcctId(param.getToAccount());
         servReqBody.setInAcctName(param.getToName());
@@ -170,8 +170,11 @@ public class TransactProcessor extends AbstractCcbProcessor implements TxnProces
 
         //是否他行标志
         String bankFlag = "1"; //默认本行
+        servReqBody.setInDepId("11036");
+//        servReqBody.setInDepId("11009");
         if ("1".equals(param.getBank())) {//SBS报文中 “1”代表他行
             bankFlag = "0"; //设为他行
+            servReqBody.setInDepId("00000");
         }
         servReqBody.setBankFlag(bankFlag);
 

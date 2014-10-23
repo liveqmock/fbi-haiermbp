@@ -33,6 +33,7 @@ public class QueryResultProcessor extends AbstractCcbProcessor implements TxnPro
         QueryResultResponseParam clientResponseParam = new QueryResultResponseParam();
         clientRespBean.setHead(clientResponseHead);
         clientRespBean.setParam(clientResponseParam);
+        String tpsTxnSn = "";
 
         try {
             //转换1：Client Request XML -> Cleint Request Bean
@@ -41,19 +42,19 @@ public class QueryResultProcessor extends AbstractCcbProcessor implements TxnPro
             logger.info("SBS Request:" + clientReqBean);
 
             //本地业务逻辑处理
-            String tpsTxnSn = processTxn(context, clientReqBean);
-            if (tpsTxnSn == null) { //本地文件中无此流水号（交易日期文件）
+            tpsTxnSn = processTxn(context, clientReqBean);
+            if (StringUtils.isEmpty(tpsTxnSn)) {//本地文件中无此流水号（交易日期文件）
                 //直接返回
                 clientResponseHead.setOpRetCode("0");
                 clientResponseHead.setOpRetMsg("MBP-E0001:查无此交易流水号");
                 clientResponseParam.setReason("MBP-E0001:查无此交易流水号");
                 clientResponseParam.setResult("2");
                 String clientRespXml = "<?xml version=\"1.0\" encoding=\"GB2312\"?>" + jaxbHelper.beanToXml(QueryResultResponseRoot.class, clientRespBean);
-                logger.info("Client Response xmlmsg:[" + clientRespXml + "]");
+                logger.info("=[" + tpsTxnSn + "]=" + "Client Response xmlmsg:[" + clientRespXml + "]");
 
                 //Client响应
                 context.setResponseBuffer(clientRespXml.getBytes("GBK"));
-                processClientResponse(context);
+                processClientResponse(context,tpsTxnSn);
                 return;
             }
 
@@ -64,8 +65,8 @@ public class QueryResultProcessor extends AbstractCcbProcessor implements TxnPro
             String ccbReqXml = jaxbHelper.beanToXml(CcbvipT4868RequestRoot.class, servReqBean);
 
             //与第三方Server通讯
-            String tpsRespXml = processServerRequest(context, TPS_TXNCODE, ccbReqXml);
-            logger.info("CCB Response xmlmsg:[" + tpsRespXml + "]");
+            String tpsRespXml = processServerRequest(context, TPS_TXNCODE, ccbReqXml, tpsTxnSn);
+            logger.info("=[" + tpsTxnSn + "]=" + "CCB Response xmlmsg:[" + tpsRespXml + "]");
 
             //转换4：Server Response Xml -> Server Response Bean
             tpsRespXml = "<?xml version=\"1.0\" encoding=\"GBK\"?>" + tpsRespXml.substring(21);
@@ -73,11 +74,11 @@ public class QueryResultProcessor extends AbstractCcbProcessor implements TxnPro
 
             //检查逻辑
             if (!servReqBean.getHead().getTxSeqId().equals(servRespBean.getHead().getTxSeqId())) {
-                logger.error("响应报文流水号与请求报文流水号不符。" + tpsRespXml);
+                logger.error("=[" + tpsTxnSn + "]=" + "响应报文流水号与请求报文流水号不符。" + tpsRespXml);
                 throw new RuntimeException("响应报文流水号与请求报文流水号不符。");
             }
             if (!servReqBean.getBody().getCoSeqId().equals(servRespBean.getBody().getCoSeqId())) {
-                logger.error("响应报文中的查询流水号与请求报文的查询流水号不符。" + tpsRespXml);
+                logger.error("=[" + tpsTxnSn + "]=" + "响应报文中的查询流水号与请求报文的查询流水号不符。" + tpsRespXml);
                 throw new RuntimeException("响应报文中的查询流水号与请求报文的查询流水号不符。");
             }
 
@@ -136,11 +137,11 @@ public class QueryResultProcessor extends AbstractCcbProcessor implements TxnPro
 
             //转换6：Client Response Bean -> Client Response Xml
             String clientRespXml = "<?xml version=\"1.0\" encoding=\"GB2312\"?>" + jaxbHelper.beanToXml(QueryResultResponseRoot.class, clientRespBean);
-            logger.info("Client Response xmlmsg:[" + clientRespXml + "]");
+            logger.info("=[" + tpsTxnSn + "]=" + "Client Response xmlmsg:[" + clientRespXml + "]");
 
             //Client响应
             context.setResponseBuffer(clientRespXml.getBytes("GBK"));
-            processClientResponse(context);
+            processClientResponse(context,tpsTxnSn);
         } catch (Exception e) {
             logger.error("交易处理异常", e);
 
@@ -153,14 +154,14 @@ public class QueryResultProcessor extends AbstractCcbProcessor implements TxnPro
 
             JaxbHelper jaxbHelper = new JaxbHelper();
             String clientRespXml = "<?xml version=\"1.0\" encoding=\"GB2312\"?>" + jaxbHelper.beanToXml(QueryResultResponseRoot.class, clientRespBean);
-            logger.info("Client Response xmlmsg:[" + clientRespXml + "]");
+            logger.info("=[" + tpsTxnSn + "]=" + "Client Response xmlmsg:[" + clientRespXml + "]");
 
             //Client响应
             try {
                 context.setResponseBuffer(clientRespXml.getBytes("GBK"));
-                processClientResponse(context);
+                processClientResponse(context,tpsTxnSn);
             } catch (IOException e1) {
-                logger.error("处理Client响应报文错误.", e);
+                logger.error("=[" + tpsTxnSn + "]=" + "处理Client响应报文错误.", e);
                 //不抛异常
             }
         }

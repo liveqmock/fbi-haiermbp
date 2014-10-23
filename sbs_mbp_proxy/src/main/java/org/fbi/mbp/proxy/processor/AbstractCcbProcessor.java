@@ -31,7 +31,7 @@ public class AbstractCcbProcessor {
 
     private static int MSG_HEADER_LEN = 111;   //header 长度
 
-    protected String processServerRequest(TxnContext txnContext, String txnCode, String xmlMsg) throws IOException {
+    protected String processServerRequest(TxnContext txnContext, String txnCode, String xmlMsg, String tpsTxnSn) throws IOException {
         //组CCB请求报文头
         CcbCommMsgHead ccbReqCommMsgHead = new CcbCommMsgHead();
         ccbReqCommMsgHead.setTxCode(StringUtils.rightPad(txnCode, 5, " "));
@@ -39,7 +39,7 @@ public class AbstractCcbProcessor {
         byte[] xmlBuf = xmlMsg.getBytes("GBK");
         ccbReqCommMsgHead.setMsgDataLen(StringUtils.rightPad(("" + xmlBuf.length), 9, " "));
         String ccbReqStr = ccbReqCommMsgHead.toMsgString() +  xmlMsg;
-        logger.info("CCB Request Msg:" + ccbReqStr);
+        logger.info("=[" + tpsTxnSn + "]=" + "CCB Request Msg:" + ccbReqStr);
 
         InetAddress addr = InetAddress.getByName(txnContext.getCcbRouterConfigByKey("ICIP"));
         Socket socket = new Socket();
@@ -74,7 +74,7 @@ public class AbstractCcbProcessor {
             }
 
             String ccbRespMsg = new String(ccbRespMsgBuf, "GBK");
-            logger.debug("CCB server response msg:" + ccbRespMsg);
+            logger.debug("=[" + tpsTxnSn + "]=" +"CCB server response msg:" + ccbRespMsg);
 
             return ccbRespMsg;
         } finally {
@@ -87,13 +87,13 @@ public class AbstractCcbProcessor {
         }
     }
 
-    protected void processClientResponse(TxnContext context) throws IOException {
+    protected void processClientResponse(TxnContext context, String tpsTxnSn) throws IOException {
         String msgLen = StringUtils.leftPad(("" + context.getResponseBuffer().length), 10, "0");
 
         //client 响应报文
         OutputStream sendClientOs = context.getClientReponseOutputStream();
         byte[] buffer = SocketUtils.bytesMerger(msgLen.getBytes(),context.getResponseBuffer());
-        logger.info("Client response msg:[" + new String(buffer,"GBK") + "]");
+        logger.info("=[" + tpsTxnSn + "]=" + "Client response msg:[" + new String(buffer,"GBK") + "]");
         sendClientOs.write(buffer);
         sendClientOs.flush();
     }

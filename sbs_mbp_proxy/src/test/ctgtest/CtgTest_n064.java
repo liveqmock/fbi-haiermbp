@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * CTG测试程序，与SBS测试机联通通过，能够正常收发包
+ * n064 查询历史交易明细
  */
-public class CtgTest_zk1748 {
+public class CtgTest_n064 {
 
     private static JavaGateway javaGatewayObject;
     public static int iValidationFailed = 0;
@@ -55,8 +55,7 @@ public class CtgTest_zk1748 {
                 }
                 //打包
 
-                //buff = "TPEIxxxx 010       MPC1SYS1                       0611111103010026004010 140000010201100118000000000000000001";
-                buff = "TPEIn020 010        MPC1MPC1SYS213524678"; //包头内容，xxxx交易，010网点，MPC1终端，MPC2柜员，包头定长51个字符
+                buff = "TPEIn064 010        MPC1MPC1SYS213524678"; //包头内容，xxxx交易，010网点，MPC1终端，MPC2柜员，包头定长51个字符
                 System.arraycopy(getBytes(buff), 0, abytCommarea, 0, buff.length()); //打包包头
 
                 List list = new ArrayList();//包体内容，将包体内容放入list中，有几个输入项，就add几个
@@ -68,62 +67,13 @@ public class CtgTest_zk1748 {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//n020 CTY 汇出汇款
-/*                list.add("MPC1000147231482");     //MPC流水号
-                list.add("010");                    //交易机构
-                list.add("20141028");               //委托日期
-                list.add("010104");                 //客户号
-                list.add("CTY");                    //交易类型
-                list.add("001");                    //交易货币
-                list.add("+0000000000001.01");      //交易金额
-                list.add("T");                      //汇款类型
-                list.add("01");                     //汇款帐户类型
-                list.add("801000017002013001    ");//汇款帐户
-                list.add("1");                     //费用帐户类型
-                list.add("                      ");//费用帐户
-//                list.add("37101985510059024190");  //收款人帐号
-                list.add("11001007100059555999");  //收款人帐号
-                list.add("公司零一");//收款人名称
-                list.add("建行北京燕山支行");//收款行行名
-//                list.add("105100024020");//保留项
-                list.add("105100000025");//保留项
-                list.add("                                        ");                                        //保留项
-                list.add("1");//汇款人名称150
-                list.add("到账通知交易测试");//汇款用途150
-                list.add(" ");    //保留项
-                list.add("105100000025");          //收款行机构号、行号
-                list.add("保留项    ");            //保留项
-                list.add(" ");                     //保留项
-                list.add("FSPP293062000001");      //FS流水号
-                list.add("1300000000000082");      //交易流水号*/
-
-                list.add("MPC1000147231483");     //MPC流水号
-                list.add("010");                    //交易机构
-                list.add("20141028");               //委托日期
-                list.add("010104");                 //客户号
-                list.add("CTY");                    //交易类型
-                list.add("001");                    //交易货币
-                list.add("+0000000000001.01");      //交易金额
-                list.add("T");                      //汇款类型
-                list.add("01");                     //汇款帐户类型
-                list.add("801000017002013001    ");//汇款帐户
-                list.add("1");                     //费用帐户类型
-                list.add("                      ");//费用帐户
-//                list.add("37101985510059024190");  //收款人帐号
-                list.add("11001071700056000600");  //收款人帐号
-                list.add("公司一九");//收款人名称
-                list.add("北京市安华支行营业部");//收款行行名
-//                list.add("105100024020");//保留项
-                list.add("105100000025");//保留项
-                list.add("                                        ");                                        //保留项
-                list.add("1");//汇款人名称150
-                list.add("到账通知交易测试");//汇款用途150
-                list.add(" ");    //保留项
-                list.add("105100000025");          //收款行机构号、行号
-                list.add("保留项    ");            //保留项
-                list.add(" ");                     //保留项
-                list.add("FSPP293062000001");      //FS流水号
-                list.add("1300000000000083");      //交易流水号
+//n064 建行 查账户明细 [日期  账号  行号 币别 起始序号]
+                list.add("20141010");               //起始日期
+                list.add("20141023");               //结束日期
+                list.add("37101985510050404002");   //收款人帐号
+                list.add("105");//行号
+                list.add("");//币别
+                list.add("0");//起始序号
 
 /*
                 list.add("MPC1000147231466  ");     //MPC流水号
