@@ -91,7 +91,8 @@ public class TcpBlockServer implements Server {
                         try {
                             channelHandler.onRead(channelContext);
                         } catch (IOException e) {
-                            throw new RuntimeException(e);
+                            //throw new RuntimeException(e);
+                            e.printStackTrace();
                         }
                     }
                 };

@@ -28,7 +28,8 @@ public class CtgTest_zk1748 {
         // String strUrl = "local:";
         // String buff = "";
         // int iPort = 1445;
-        String strUrl = "10.143.20.130";
+        String strUrl = "127.0.0.1";
+//        String strUrl = "10.143.20.130";
 
         String buff = "";
         int iPort = 2006;
@@ -56,7 +57,7 @@ public class CtgTest_zk1748 {
                 //打包
 
                 //buff = "TPEIxxxx 010       MPC1SYS1                       0611111103010026004010 140000010201100118000000000000000001";
-                buff = "TPEIn020 010        MPC1MPC1SYS213524678"; //包头内容，xxxx交易，010网点，MPC1终端，MPC2柜员，包头定长51个字符
+                buff = "TPEIn020  010       MPC1MPC1SYS213524678"; //包头内容，xxxx交易，010网点，MPC1终端，MPC2柜员，包头定长51个字符
                 System.arraycopy(getBytes(buff), 0, abytCommarea, 0, buff.length()); //打包包头
 
                 List list = new ArrayList();//包体内容，将包体内容放入list中，有几个输入项，就add几个
@@ -97,7 +98,7 @@ public class CtgTest_zk1748 {
                 list.add("FSPP293062000001");      //FS流水号
                 list.add("1300000000000082");      //交易流水号*/
 
-                list.add("MPC1000147231483");     //MPC流水号
+                list.add("MPC1000147231487");     //MPC流水号
                 list.add("010");                    //交易机构
                 list.add("20141028");               //委托日期
                 list.add("010104");                 //客户号
@@ -109,21 +110,32 @@ public class CtgTest_zk1748 {
                 list.add("801000017002013001    ");//汇款帐户
                 list.add("1");                     //费用帐户类型
                 list.add("                      ");//费用帐户
-//                list.add("37101985510059024190");  //收款人帐号
+
+                list.add("37101985510059024190");  //收款人帐号
+                list.add("重庆新日日顺家电销售有限公司南宁分公司");//收款人名称
+                list.add("重庆建行");//收款行行名
+                list.add("105653007085");//保留项
+
+/*
                 list.add("11001071700056000600");  //收款人帐号
                 list.add("公司一九");//收款人名称
                 list.add("北京市安华支行营业部");//收款行行名
-//                list.add("105100024020");//保留项
                 list.add("105100000025");//保留项
-                list.add("                                        ");                                        //保留项
+*/
+
+                list.add("                                        "); //保留项
                 list.add("1");//汇款人名称150
                 list.add("到账通知交易测试");//汇款用途150
                 list.add(" ");    //保留项
-                list.add("105100000025");          //收款行机构号、行号
+
+                list.add("105653007085");          //收款行机构号、行号
+//                list.add("105100000025");          //收款行机构号、行号
+
                 list.add("保留项    ");            //保留项
                 list.add(" ");                     //保留项
                 list.add("FSPP293062000001");      //FS流水号
-                list.add("1300000000000083");      //交易流水号
+                list.add("1300000000000087");      //交易流水号
+
 
 /*
                 list.add("MPC1000147231466  ");     //MPC流水号
