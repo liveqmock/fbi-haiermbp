@@ -6,10 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 
-import java.io.ByteArrayInputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -85,27 +82,25 @@ public class ProxyHandler implements ChannelHandler {
                         String txnCode = txnHeader.getTxnCode();
                         String termId = txnHeader.getTermId();
 
-                        processCpsTxn(ctgRequest, osToClient);
+                        processCpsTxn(ctgRequest, eciRequest, osToClient);
                         return;
                     }
-
                 }
                 //转发
-                ctgRequest.writeRootObject(osToTps);
-                //ctgRequest.writeObject(osToTps);
+                ctgRequest.writeObject(osToTps);
 
                 //收tps响应
                 CtgRequest sbsCtgRequest = new CtgRequest();
                 sbsCtgRequest.readObject(osFromTps);
 
                 //返回客户端
-                sbsCtgRequest.writeRootObject(osToClient);
+                sbsCtgRequest.writeObject(osToClient);
                 //sbsCtgRequest.writeObject(osToClient);
             }
         } catch (SocketException e) {
             logger.info("连接已关闭", e.getMessage());
         } catch (Exception e) {
-            logger.error("交易处理异常",e);
+            logger.error("交易处理异常", e);
             //TODO
         } finally {
             try {
@@ -118,7 +113,7 @@ public class ProxyHandler implements ChannelHandler {
         }
     }
 
-    private  void  processCpsTxn(CtgRequest ctgRequest, DataOutputStream osToClient) throws IOException {
+    private void processCpsTxn(CtgRequest ctgRequest, CtgEciRequest eciRequest, DataOutputStream osToClient) throws IOException {
         //cbs pre server
         InetAddress addrCps = InetAddress.getByName("127.0.0.1");
         Socket cpsConnection = new Socket();
@@ -131,16 +126,24 @@ public class ProxyHandler implements ChannelHandler {
         osToCps.writeInt(ctgRequest.EYECATCODE); //CTG交易标识
         osToCps.write(ctgRequest.getEciArea());
 
-        //接收报文
+        //接收报文  (报文长度（int） + 报文)
         int msgLen = osFromCps.readInt();
-        byte[] msgBuf = new byte[msgLen];
+        byte[] msgBuf = new byte[msgLen]; //commarea
         osFromCps.readFully(msgBuf);
 
         ctgRequest.setiFlowType(3);
-        ctgRequest.setEciArea(msgBuf);
+        eciRequest.Commarea_Length = msgLen;
+        eciRequest.Commarea = msgBuf;
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        DataOutputStream dos = new DataOutputStream(baos);
+        eciRequest.writeObject(dos);
+        byte[] eciArea = baos.toByteArray();
+        ctgRequest.setEciArea(eciArea);
+        ctgRequest.setiDataWhichFollows(eciArea.length);
 
         //返回客户端
-        ctgRequest.writeRootObject(osToClient);
+        ctgRequest.writeObject(osToClient);
     }
 
     //======================

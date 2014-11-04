@@ -1,4 +1,4 @@
-package org.fbi.ctgproxy;
+package org.fbi.ctgproxy.oldctg;
 
 import java.net.InetAddress;
 import java.net.ServerSocket;

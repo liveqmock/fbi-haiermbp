@@ -1,5 +1,6 @@
-package org.fbi.ctgproxy;
+package org.fbi.ctgproxy.oldctg;
 
+import org.fbi.ctgproxy.ProjectConfigManager;
 import org.fbi.xplay.ChannelContext;
 import org.fbi.xplay.ChannelHandler;
 import org.fbi.xplay.SocketUtils;

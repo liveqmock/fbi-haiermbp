@@ -1,4 +1,4 @@
-package org.fbi.ctgproxy;
+package org.fbi.ctgproxy.oldctg;
 
 import org.fbi.ctgproxy.util.OSInfo;
 import org.fbi.ctgproxy.util.OSVersion;

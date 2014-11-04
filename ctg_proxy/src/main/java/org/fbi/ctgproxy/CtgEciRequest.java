@@ -1,6 +1,7 @@
 package org.fbi.ctgproxy;
 
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 
 /**
@@ -71,4 +72,30 @@ public class CtgEciRequest extends CtgRequest {
         }
     }
 
+    public void writeObject(DataOutputStream dataoutputstream) throws IOException {
+        dataoutputstream.writeInt(Call_Type);
+        switch (Call_Type) {
+            case 9: // '\t'
+            case 10: // '\n'
+            case 11: // '\013'
+            default:
+                dataoutputstream.writeInt(Luw_Token);
+                dataoutputstream.writeInt(Message_Qualifier);
+                dataoutputstream.writeInt(0); //Cics_Rc
+                dataoutputstream.writeBytes(toPaddedString("", 4)); //Abend_Code
+                if (Commarea_Length <= 0 || Commarea == null) {
+                    Commarea_Length = 0;
+                    Commarea = null;
+                }
+                dataoutputstream.writeInt(Commarea_Length);
+                writeObjectV2(dataoutputstream);
+                if (Commarea != null)
+                    dataoutputstream.write(Commarea, 0, Commarea_Length);
+                break;
+        }
+    }
+
+    private void writeObjectV2(DataOutputStream dataoutputstream) throws IOException {
+        dataoutputstream.writeBoolean(false);
+    }
 }

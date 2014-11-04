@@ -1,5 +1,7 @@
 package org.fbi.ctgproxy;
 
+import org.fbi.ctgproxy.oldctg.Callbackable;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.Locale;
@@ -169,7 +171,7 @@ public class CtgRequest {
     }
 
 
-    public void writeRootObject(DataOutputStream out) throws IOException {
+    public void writeObject(DataOutputStream out) throws IOException {
         out.writeInt(EYECATCODE);
         out.writeInt(iFlowVersion);
         out.writeInt(iFlowType);
@@ -188,38 +190,6 @@ public class CtgRequest {
         out.write(eciArea, 0, iDataWhichFollows);
     }
 
-
-    public void writeObject(DataOutputStream out) throws IOException {
-/*
-        if (iFlowType == 5) {  //Type: FLOW_HANDSHAKE
-            if (locExchange != null) {
-                out.writeUTF(locExchange.getLanguage());
-                out.writeUTF(locExchange.getCountry());
-                out.writeUTF(locExchange.getVariant());
-            } else {
-                out.writeUTF("en");
-                out.writeUTF("US");
-                out.writeUTF("");
-            }
-            if (iFlowVersion >= 0x301000)
-                if (strServerJVM != null)
-                    out.writeUTF(strServerJVM);
-                else
-                    out.writeUTF("");
-            out.writeUTF(strServerSecurityClass);
-            if (abytHandshake != null) {
-                out.writeInt(abytHandshake.length);
-                out.write(abytHandshake, 0, abytHandshake.length);
-            } else {
-                out.writeInt(0);
-            }
-        } else if (iFlowType == 6) { //Type: FLOW_EXCEPTION
-            if (iFlowVersion >= 0x300000)
-                out.writeBoolean(boolCloseHint);
-            out.writeUTF(serverSideException);
-        }
-*/
-    }
 
     protected String toPaddedString(String s, int i) {
         StringBuilder sb = new StringBuilder(i);

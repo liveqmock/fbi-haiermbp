@@ -30,7 +30,7 @@ public class SBSResponse {
                 return;
             }
             SOFForm sofForm = new SOFForm();
-            sofForm.assembleFields(index, buffer);
+            sofForm.marshalMsgToFormBean(index, buffer);
             formCodes.add(sofForm.getFormHeader().getFormCode());
             sofForms.add(sofForm);
             index += sofForm.length;

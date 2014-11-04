@@ -1,4 +1,4 @@
-package org.fbi.ctgproxy;
+package org.fbi.ctgproxy.oldctg;
 
 
 public interface ServerGatewayRequest

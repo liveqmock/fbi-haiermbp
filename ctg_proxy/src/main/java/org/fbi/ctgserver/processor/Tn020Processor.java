@@ -9,6 +9,8 @@ import org.fbi.ctgserver.util.sbsmsg.domain.SOFForm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -37,8 +39,14 @@ public class Tn020Processor extends  AbstractProcessor implements TxnProcessor {
         }
 
         //组客户端响应报文（ECI报文  FORM HEADER + 2bytes Body length + FORM BODY）
-        SOFForm toClientForm = new SOFForm();
-        toClientForm.
+        byte[] toa = sofForm.unmarshalFormBeanToMsg();
+        try {
+            DataOutputStream dos = context.getClientOutputStream();
+            dos.writeInt(toa.length);
+            dos.write(toa);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

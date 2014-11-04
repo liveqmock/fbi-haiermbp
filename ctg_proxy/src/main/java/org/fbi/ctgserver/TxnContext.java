@@ -2,7 +2,7 @@ package org.fbi.ctgserver;
 
 import org.fbi.ctgproxy.CtgSif;
 
-import java.io.OutputStream;
+import java.io.DataOutputStream;
 import java.util.HashMap;
 
 /**
@@ -10,7 +10,7 @@ import java.util.HashMap;
  */
 public class TxnContext {
     private String projectRootDir;
-    private OutputStream clientOutputStream = null;
+    private DataOutputStream clientOutputStream = null;
     private HashMap<String,String> routerConfig = new HashMap<>();
 
     private CtgSif ctgSif;
@@ -23,11 +23,11 @@ public class TxnContext {
         this.projectRootDir = projectRootDir;
     }
 
-    public OutputStream getClientOutputStream() {
+    public DataOutputStream getClientOutputStream() {
         return clientOutputStream;
     }
 
-    public void setClientOutputStream(OutputStream clientOutputStream) {
+    public void setClientOutputStream(DataOutputStream clientOutputStream) {
         this.clientOutputStream = clientOutputStream;
     }
 

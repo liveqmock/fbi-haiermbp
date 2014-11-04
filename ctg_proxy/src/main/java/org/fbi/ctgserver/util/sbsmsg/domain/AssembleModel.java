@@ -1,5 +1,6 @@
 package org.fbi.ctgserver.util.sbsmsg.domain;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +22,7 @@ public class AssembleModel implements Assemble {
     //字段长度  字节数
     protected int[] fieldLengths;
 
-    public void assembleFields(int offset, byte[] buffer) {
+    public void marshalMsgToBean(int offset, byte[] buffer) {
         this.offset = offset;
         Class clazz = this.getClass();
         try {
@@ -51,7 +52,32 @@ public class AssembleModel implements Assemble {
                 pos += bytes.length;
             }
         } catch (Exception e) {
-            logger.error("报文解析异常"+offset, e);
+            logger.error("报文解析异常" + offset, e);
+            throw new RuntimeException("报文解析异常！", e);
+        }
+    }
+
+    public String unmarshalBeanToMsg() {
+        Class clazz = this.getClass();
+        try {
+            Field[] fields = clazz.getDeclaredFields();
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < this.fieldLengths.length; i++) {
+                Field field = fields[i];
+                field.setAccessible(true);
+                int fieldLength = fieldLengths[i];
+                if (this.fieldTypes[i] == 1) {
+                    sb.append(StringUtils.rightPad((String) field.get(this), fieldLength, " "));
+                } else if (this.fieldTypes[i] == 4) {
+                    BigDecimal decimal = (BigDecimal) field.get(this);
+                    sb.append(StringUtils.leftPad(decimal.toString(), fieldLength, " "));
+                } else {
+                    throw new RuntimeException("不支持的解析数据类型：" + this.fieldTypes[i]);
+                }
+            }
+            return sb.toString();
+        } catch (Exception e) {
+            logger.error("报文解析异常" + offset, e);
             throw new RuntimeException("报文解析异常！", e);
         }
     }

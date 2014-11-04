@@ -1,4 +1,6 @@
-package org.fbi.ctgproxy;
+package org.fbi.ctgproxy.oldctg;
+
+import org.fbi.ctgproxy.CtgRequest;
 
 import java.io.*;
 import java.util.Locale;

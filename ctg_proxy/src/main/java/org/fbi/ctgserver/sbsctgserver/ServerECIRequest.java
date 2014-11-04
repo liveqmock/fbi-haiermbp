@@ -5,7 +5,7 @@
 
 package org.fbi.ctgserver.sbsctgserver;
 
-import org.fbi.ctgproxy.*;
+import org.fbi.ctgproxy.oldctg.*;
 import org.fbi.ctgserver.sbsctgserver.util.OSInfo;
 import org.fbi.ctgserver.sbsctgserver.util.OSVersion;
 

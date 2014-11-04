@@ -4,6 +4,10 @@ import org.fbi.ctgserver.domain.sbs.form.T531;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+
 /**
  * sbs响应报文form
  */
@@ -17,10 +21,10 @@ public class SOFForm {
     private SOFFormHeader formHeader;                       // Form头
     private SOFFormBody formBody;                           // Form体
 
-    public void assembleFields(int offset, byte[] buffer) {
+    public void marshalMsgToFormBean(int offset, byte[] buffer) {
         // 包头解析
         formHeader = new SOFFormHeader();
-        formHeader.assembleFields(offset, buffer);
+        formHeader.marshalMsgToBean(offset, buffer);
         // 包体长度
         byte[] dataLengthBytes = new byte[formBodyFieldLength];
         System.arraycopy(buffer, offset + formHeaderLength, dataLengthBytes, 0, formBodyFieldLength);
@@ -42,11 +46,32 @@ public class SOFForm {
                 byte[] bodyBytes = new byte[formBodyLength];
                 System.arraycopy(buffer, offset + formHeaderLength + formBodyFieldLength, bodyBytes, 0, formBodyLength);
                 // 装配Form体
-                formBody.assembleFields(0, bodyBytes);
+                formBody.marshalMsgToBean(0, bodyBytes);
             } catch (Exception e) {
                 logger.error("Form解析错误", e);
                 throw new RuntimeException("Form解析错误：" + formHeader.getFormCode());
             }
+        }
+    }
+
+    public byte[] unmarshalFormBeanToMsg() {
+        try {
+            byte[] header = this.formHeader.unmarshalBeanToMsg().getBytes("GBK");
+            ByteArrayOutputStream baos=new ByteArrayOutputStream();
+            DataOutputStream dos = new DataOutputStream(baos);
+            dos.write(header);
+
+            if (this.formBody != null) {
+                byte[] body = this.formBody.unmarshalBeanToMsg().getBytes("GBK");
+                dos.writeShort(body.length);
+                dos.write(body);
+            } else {
+                dos.writeShort(0);
+            }
+
+            return baos.toByteArray();
+        } catch (IOException e) {
+            throw new RuntimeException("组TOA报文错误：" + formHeader.getFormCode());
         }
     }
 

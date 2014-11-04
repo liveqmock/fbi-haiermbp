@@ -81,6 +81,7 @@ public class ServerHandler implements ChannelHandler {
 
                 TxnContext txnContext = new TxnContext();
                 txnContext.setCtgSif(ctgSif);
+                txnContext.setClientOutputStream(osToClient);
 
                 Class txnClazz = Class.forName(this.getClass().getPackage().getName() + ".processor.T" + txnCode + "Processor");
                 TxnProcessor processor = (TxnProcessor) txnClazz.newInstance();

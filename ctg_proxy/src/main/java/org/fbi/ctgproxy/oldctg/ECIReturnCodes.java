@@ -3,7 +3,7 @@
 // Decompiler options: packimports(3) fieldsfirst ansi space 
 // Source File Name:   ECIReturnCodes.java
 
-package org.fbi.ctgproxy;
+package org.fbi.ctgproxy.oldctg;
 
 
 public interface ECIReturnCodes

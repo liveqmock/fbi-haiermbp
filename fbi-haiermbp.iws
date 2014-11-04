@@ -2,91 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9022f9aa-a278-452d-a630-cbc18629bace" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/processor/AbstractProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/Assemble.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/AssembleModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/Callbackable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/connector/cbs10/Cbs10Request.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/connector/cbs10/Cbs10Response.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CicsResourceBundle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CicsResourceBundle_zh.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ClientMessages.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ClientResourceBundle_zh.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ClientSecurity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ClientTraceMessages.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgEciRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/CtgManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgProxy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/CtgServer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgSif.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ECIRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ECIReturnCodes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/Event.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/GatewayRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/GatewayReturnCodes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/GenericProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/JavaGateway.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/JavaGatewayInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/MsgQualMgr.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/util/OSInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/util/OSInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/util/OSVersion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/util/OSVersion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/Processor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/ProcessorConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/ProcessorContext.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/ProcessorException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/ProcessorManagerService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/ProcessorRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/ProcessorRequestWrapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/ProcessorResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/ProcessorResponseWrapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ProjectConfigManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ProxyHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ProxyHandler2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ResourceWrapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/SBSRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/SBSResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFForm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFFormBody.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFFormHeader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/SafeIP.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/connector/sbs10/Sbs10Request.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ServerECIRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/ServerECIRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ServerGatewayRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/ServerGatewayRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/ServerHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/ServerMessages.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/ServerResourceBundle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/ServerResourceBundle_zh.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/standprotocol10/Stdp10Processor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/standprotocol10/Stdp10ProcessorRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/standprotocol10/Stdp10ProcessorRequestWrapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/standprotocol10/Stdp10ProcessorResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/processor/standprotocol10/Stdp10ProcessorResponseWrapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/T.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/domain/sbs/form/T531.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/TFileException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/TFileReturnCodes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/domain/ibpv10/TIABody.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/domain/ibpv10/TIAn020.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/TcpJavaGateway.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/processor/Tn020Processor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/TraceMessages.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/TraceResourceBundle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/TxnContext.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/TxnMonitor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/TxnProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy/ctg_proxy.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ctg_proxy_cfg/ctg_proxy_cfg.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sbs_mbp_proxy/src/test/ctgtest/CtgTest_zk1748.java" afterPath="$PROJECT_DIR$/sbs_mbp_proxy/src/test/ctgtest/CtgTest_zk1748.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xplay/src/main/java/org/fbi/xplay/TcpBlockServer.java" afterPath="$PROJECT_DIR$/xplay/src/main/java/org/fbi/xplay/TcpBlockServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/Assemble.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/Assemble.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/AssembleModel.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/AssembleModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgEciRequest.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgEciRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgRequest.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ProxyHandler.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ProxyHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/SBSResponse.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/SBSResponse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFForm.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/ServerECIRequest.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/ServerECIRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/ServerHandler.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/ServerHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/processor/Tn020Processor.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/processor/Tn020Processor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/TxnContext.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/TxnContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fbi-haiermbp.ipr" afterPath="$PROJECT_DIR$/fbi-haiermbp.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fbi-haiermbp.iws" afterPath="$PROJECT_DIR$/fbi-haiermbp.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sbs_mbp_proxy/sbs_mbp_proxy.iml" afterPath="$PROJECT_DIR$/sbs_mbp_proxy/sbs_mbp_proxy.iml" />
-      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\sbs_mbp_proxy_start\sbs_mbp_proxy_config.iml" afterPath="$PROJECT_DIR$/sbs_mbp_proxy_start/sbs_mbp_proxy_cfg.iml" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\Callbackable.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/Callbackable.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\CicsResourceBundle.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/CicsResourceBundle.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\CicsResourceBundle_zh.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/CicsResourceBundle_zh.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\ClientMessages.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/ClientMessages.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\ClientResourceBundle_zh.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/ClientResourceBundle_zh.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\ClientSecurity.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/ClientSecurity.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\ClientTraceMessages.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/ClientTraceMessages.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\ECIRequest.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/ECIRequest.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\ECIReturnCodes.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/ECIReturnCodes.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\Event.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/Event.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\GatewayRequest.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/GatewayRequest.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\GatewayReturnCodes.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/GatewayReturnCodes.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\JavaGateway.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/JavaGateway.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\JavaGatewayInterface.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/JavaGatewayInterface.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\ProxyHandler1.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/ProxyHandler1.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\ProxyHandler2.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/ProxyHandler2.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\ResourceWrapper.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/ResourceWrapper.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\SafeIP.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/SafeIP.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\ServerECIRequest.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/ServerECIRequest.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\ServerGatewayRequest.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/ServerGatewayRequest.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\T.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/T.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\TFileException.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/TFileException.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\TFileReturnCodes.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/TFileReturnCodes.java" />
+      <change type="MOVED" beforePath="E:\WorkSpace\git-haiermbp\src\fbi-haiermbp\ctg_proxy\src\main\java\org\fbi\ctgproxy\TcpJavaGateway.java" afterPath="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/TcpJavaGateway.java" />
     </list>
     <ignored path="fbi-haiermbp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -140,8 +92,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <breakpoint_rules converted="true" />
     <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -152,18 +104,8 @@
       <file leaf-file-name="Tn020Processor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/processor/Tn020Processor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="547" max-vertical-offset="1056">
-              <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CtgManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/CtgManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1976" max-vertical-offset="5588">
-              <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1276">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -172,12 +114,9 @@
       <file leaf-file-name="SBSResponse.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/SBSResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="946">
-              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-              <folding>
-                <element signature="e#421#422#0" expanded="true" />
-                <element signature="e#452#453#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="133" max-vertical-offset="902">
+              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,68 +124,81 @@
       <file leaf-file-name="SOFForm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1364">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="1936">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SOFFormBody.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFFormBody.java">
+      <file leaf-file-name="TcpJavaGateway.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/TcpJavaGateway.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="286">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.35873017" vertical-offset="3011" max-vertical-offset="9328">
+              <caret line="142" column="34" selection-start-line="142" selection-start-column="34" selection-end-line="142" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Introspector.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/java/jdk1.7.0_17_i586/src.zip!/java/beans/Introspector.java">
+      <file leaf-file-name="ProxyHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ProxyHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="13443" max-vertical-offset="33682">
-              <caret line="608" column="12" selection-start-line="608" selection-start-column="12" selection-end-line="608" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1518" max-vertical-offset="4136">
+              <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BeanDescriptor.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/java/jdk1.7.0_17_i586/src.zip!/java/beans/BeanDescriptor.java">
+      <file leaf-file-name="Callbackable.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/Callbackable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1269" max-vertical-offset="2486">
-              <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="264">
+              <caret line="6" column="34" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TxnProcessor.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/TxnProcessor.java">
+      <file leaf-file-name="CtgEciRequest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgEciRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="308">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="415" max-vertical-offset="2354">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding>
+                <element signature="e#3153#3154#0" expanded="true" />
+                <element signature="e#3205#3206#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CtgRequest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="6908">
+              <caret line="170" column="45" selection-start-line="170" selection-start-column="5" selection-end-line="170" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractProcessor.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CtgSif.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgSif.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2684">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractProcessor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/processor/AbstractProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.686747" vertical-offset="885" max-vertical-offset="1540">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="T531.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/domain/sbs/form/T531.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="2904">
-              <caret line="7" column="37" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1189" max-vertical-offset="1628">
+              <caret line="59" column="15" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -256,7 +208,7 @@
   </component>
   <component name="FindManager">
     <FindUsagesManager>
-      <setting name="OPEN_NEW_TAB" value="true" />
+      <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
@@ -265,8 +217,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/CtgServer.java" />
-        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/ECIRequest.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/ServerGatewayRequest.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/OSVersion.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/OSInfo.java" />
@@ -280,9 +230,6 @@
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ServerECIRequest.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/GatewayRequest.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/EciCtgRequest.java" />
-        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgEciRequest.java" />
-        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgRequest.java" />
-        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ProxyHandler.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/ServerECIRequest.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/MsgQualMgr.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/TxnProcessor.java" />
@@ -305,17 +252,22 @@
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/ServerMessages.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgTxnHeader.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgSifHeader.java" />
-        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/TxnContext.java" />
-        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/ServerHandler.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgSif.java" />
         <option value="$PROJECT_DIR$/sbs_mbp_proxy/src/test/ctgtest/CtgTest_zk1748.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/domain/sbs/tia/TIAn020.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/domain/ibpv10/TIABody.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/CtgManager.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/domain/sbs/form/SbsForm.java" />
-        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFForm.java" />
-        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/processor/Tn020Processor.java" />
         <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/processor/AbstractProcessor.java" />
+        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/AssembleModel.java" />
+        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/ServerHandler.java" />
+        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/processor/Tn020Processor.java" />
+        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/TxnContext.java" />
+        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFForm.java" />
+        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgEciRequest.java" />
+        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/Callbackable.java" />
+        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ProxyHandler.java" />
+        <option value="$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgRequest.java" />
       </list>
     </option>
   </component>
@@ -372,18 +324,8 @@
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -397,11 +339,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
+              <option name="myItemId" value="ctgclient.jar" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -415,219 +357,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sun" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sun" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reflect" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sun" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reflect" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="misc" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lang" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lang" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ref" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beans" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
+              <option name="myItemId" value="ctgclient.jar" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -635,7 +369,71 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sun" />
+              <option name="myItemId" value="ibm" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fbi-haiermbp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctgclient.jar" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibm" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctg" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fbi-haiermbp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctgclient.jar" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibm" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctg" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -651,78 +449,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sun" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beans" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sun" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beans" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="finder" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7_i586 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -776,100 +502,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sbs_mbp_proxy" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbp" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proxy" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sbs_mbp_proxy" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbp" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proxy" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="processor" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ctg_proxy_cfg" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1082,90 +714,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="processor" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ctg_proxy" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ctgserver" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sbs" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="form" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi-haiermbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ctg_proxy" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fbi" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ctgserver" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1200,6 +748,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ctgproxy" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fbi-haiermbp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctg_proxy" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fbi" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctgproxy" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oldctg" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1444,17 +1030,23 @@
       <option name="trusted" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
       <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -1485,23 +1077,17 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
       <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1540,6 +1126,26 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
       <option name="BCName" value="" />
       <option name="IOSSimulatorSdkPath" value="" />
@@ -1575,26 +1181,6 @@
       <option name="usbDebugPort" value="7936" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.CtgTest_zk1748" />
       <item index="1" class="java.lang.String" itemvalue="Application.CtgTest_n063" />
@@ -1604,9 +1190,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.CtgTest_zk1748" />
-        <item index="1" class="java.lang.String" itemvalue="Application.CtgServer" />
-        <item index="2" class="java.lang.String" itemvalue="Application.CtgProxy" />
+        <item index="0" class="java.lang.String" itemvalue="Application.CtgProxy" />
+        <item index="1" class="java.lang.String" itemvalue="Application.CtgTest_zk1748" />
+        <item index="2" class="java.lang.String" itemvalue="Application.CtgServer" />
         <item index="3" class="java.lang.String" itemvalue="Application.CtgTest_n063" />
         <item index="4" class="java.lang.String" itemvalue="Application.CtgTest_n062" />
       </list>
@@ -1647,12 +1233,13 @@
       <workItem from="1414210840259" duration="271000" />
       <workItem from="1414214075526" duration="1625000" />
       <workItem from="1414231309978" duration="51384000" />
-      <workItem from="1414554352957" duration="37998000" />
+      <workItem from="1414554352957" duration="45564000" />
+      <workItem from="1415003558448" duration="10733000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256947000" />
+    <option name="totallyTimeSpent" value="275246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1666,7 +1253,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37006578" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1688,10 +1275,10 @@
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1709,8 +1296,8 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1736,21 +1323,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFForm.java</url>
-          <line>38</line>
-          <properties />
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/processor/Tn020Processor.java</url>
-          <line>32</line>
-          <properties />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="41" />
+      <option name="time" value="47" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1764,75 +1337,10 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/ServerECIRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="22194" max-vertical-offset="39798">
-          <caret line="1026" column="66" selection-start-line="1026" selection-start-column="66" selection-end-line="1026" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/sbsctgserver/MsgQualMgr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3032" max-vertical-offset="3630">
-          <caret line="158" column="21" selection-start-line="158" selection-start-column="21" selection-end-line="158" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sbs_mbp_proxy/src/main/java/org/fbi/mbp/proxy/processor/TransactProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="392" max-vertical-offset="4224">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sbs_mbp_proxy/src/main/java/org/fbi/mbp/proxy/TxnProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="308">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgEciRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1141" max-vertical-offset="1760">
-          <caret line="71" column="10" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sbs_mbp_proxy/src/main/java/org/fbi/mbp/proxy/processor/AbstractProxyProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1870">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sbs_mbp_proxy/src/main/java/org/fbi/mbp/proxy/processor/AbstractCcbProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="2926">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sbs_mbp_proxy/src/main/java/org/fbi/mbp/proxy/SbsToMbpProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1034">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sbs_mbp_proxy/src/main/java/org/fbi/mbp/proxy/SbsToMbpMsgHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2416" max-vertical-offset="5918">
           <caret line="122" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1840,7 +1348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="921" max-vertical-offset="1474">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1848,7 +1355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="572">
           <caret line="11" column="30" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1856,7 +1362,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1078">
           <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1864,7 +1369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="41" max-vertical-offset="594">
           <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1872,7 +1376,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="4374" max-vertical-offset="6314">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1880,15 +1383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="242">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/AssembleModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="745" max-vertical-offset="1408">
-          <caret line="57" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1904,7 +1398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1202" max-vertical-offset="3608">
           <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1912,7 +1405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1202" max-vertical-offset="3608">
           <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1920,7 +1412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="2134">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1936,7 +1427,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2014" max-vertical-offset="3432">
           <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1944,10 +1434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="9890" max-vertical-offset="22352">
           <caret line="468" column="0" selection-start-line="468" selection-start-column="0" selection-end-line="468" selection-end-column="0" />
-          <folding>
-            <element signature="e#12714#12715#0" expanded="false" />
-            <element signature="e#12767#12768#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1955,7 +1441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="484">
           <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1963,7 +1448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33096084" vertical-offset="413" max-vertical-offset="792">
           <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1979,7 +1463,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="462">
           <caret line="13" column="64" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1987,7 +1470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2476" max-vertical-offset="2926">
           <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1995,7 +1477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="325" max-vertical-offset="660">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2003,7 +1484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="744" max-vertical-offset="1430">
           <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2011,10 +1491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33273056" vertical-offset="916" max-vertical-offset="2992">
           <caret line="52" column="54" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="54" />
-          <folding>
-            <element signature="e#1098#1099#0" expanded="false" />
-            <element signature="e#1125#1126#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2022,7 +1498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2058" max-vertical-offset="4004">
           <caret line="98" column="25" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2034,68 +1509,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/TxnContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="239" max-vertical-offset="946">
-          <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
-          <folding>
-            <element signature="e#1058#1059#0" expanded="false" />
-            <element signature="e#1102#1103#0" expanded="false" />
-            <element signature="e#1138#1139#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/ServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1403" max-vertical-offset="2684">
-          <caret line="87" column="35" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ProxyHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1572" max-vertical-offset="4070">
-          <caret line="82" column="47" selection-start-line="82" selection-start-column="47" selection-end-line="82" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sbs_mbp_proxy/src/test/ctgtest/CtgTest_zk1748.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1118" max-vertical-offset="7898">
-          <caret line="59" column="44" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgSif.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="386" max-vertical-offset="2948">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#2840#2841#0" expanded="true" />
-            <element signature="e#2870#2871#0" expanded="true" />
-            <element signature="e#2916#2917#0" expanded="true" />
-            <element signature="e#2954#2955#0" expanded="true" />
-            <element signature="e#2987#2988#0" expanded="true" />
-            <element signature="e#3016#3017#0" expanded="true" />
-            <element signature="e#3060#3061#0" expanded="true" />
-            <element signature="e#3096#3097#0" expanded="true" />
-            <element signature="e#3129#3130#0" expanded="true" />
-            <element signature="e#3158#3159#0" expanded="true" />
-            <element signature="e#3202#3203#0" expanded="true" />
-            <element signature="e#3238#3239#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/domain/ibpv10/TIAn020.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33273056" vertical-offset="2434" max-vertical-offset="3344">
           <caret line="207" column="18" selection-start-line="207" selection-start-column="18" selection-end-line="207" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2103,7 +1520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="286">
           <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2111,7 +1527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1166">
           <caret line="12" column="41" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2119,23 +1534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="308">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/CtgManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1976" max-vertical-offset="5588">
-          <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/domain/sbs/form/T531.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="2904">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2143,7 +1541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="13443" max-vertical-offset="33682">
           <caret line="608" column="12" selection-start-line="608" selection-start-column="12" selection-end-line="608" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2151,49 +1548,176 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1269" max-vertical-offset="2486">
           <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFFormHeader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1452">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/SBSResponse.java">
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/domain/sbs/form/T531.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="946">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding>
-            <element signature="e#421#422#0" expanded="true" />
-            <element signature="e#452#453#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2904">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFFormBody.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="286">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFForm.java">
+    <entry file="jar://C:/java/jdk1.7.0_17_i586/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1364">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="20302" max-vertical-offset="66836">
+          <caret line="954" column="18" selection-start-line="954" selection-start-column="18" selection-end-line="954" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/processor/Tn020Processor.java">
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/ServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="547" max-vertical-offset="1056">
-          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1396" max-vertical-offset="2706">
+          <caret line="81" column="22" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/TxnContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="902">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/AssembleModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1599" max-vertical-offset="1980">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../lib/ctgclient.jar!/com/ibm/ctg/client/JavaGateway.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36966825" vertical-offset="494" max-vertical-offset="1386">
+          <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/JavaGateway.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24444444" vertical-offset="0" max-vertical-offset="6908">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sbs_mbp_proxy/src/test/ctgtest/CtgTest_zk1748.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4850" max-vertical-offset="7898">
+          <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/CtgManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2689" max-vertical-offset="5588">
+          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/processor/AbstractProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.686747" vertical-offset="885" max-vertical-offset="1540">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1189" max-vertical-offset="1628">
+          <caret line="59" column="15" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/SBSResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="133" max-vertical-offset="902">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="1936">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/Callbackable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="264">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgSif.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2684">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/ProxyHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1518" max-vertical-offset="4136">
+          <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="6908">
+          <caret line="170" column="45" selection-start-line="170" selection-start-column="5" selection-end-line="170" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/CtgEciRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="415" max-vertical-offset="2354">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="e#3153#3154#0" expanded="true" />
+            <element signature="e#3205#3206#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/processor/Tn020Processor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1276">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgproxy/oldctg/TcpJavaGateway.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35873017" vertical-offset="3011" max-vertical-offset="9328">
+          <caret line="142" column="34" selection-start-line="142" selection-start-column="34" selection-end-line="142" selection-end-column="34" />
           <folding />
         </state>
       </provider>

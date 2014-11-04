@@ -74,39 +74,6 @@
     <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFForm.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFFormBody.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/domain/SOFFormHeader.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/AnnotationModelLoader.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/DataBindAbstractDataFormat.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/DataBindAbstractFactory.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/DataBindFactory.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/DataFormat.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/FixedLengthTextDataBindFactory.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/FixedLengthTextDataFormat.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/Format.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/FormatFactory.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/PatternFormat.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/SeperatedTextDataBindFactory.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/SeperatedTextDataFormat.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/annotation/DataField.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/annotation/FixedLengthTextMessage.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/annotation/Link.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/annotation/LinkType.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/annotation/OneToMany.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/annotation/OneToManyFixedLengthTextMessage.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/annotation/OneToManySeperatedTextMessage.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/annotation/SeperatedTextMessage.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/format/BigDecimalFormat.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/format/DatePatternFormat.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/format/FormatException.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/format/NumberPatternFormat.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/format/ShortFormat.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/format/ShortPatternFormat.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/format/StringFormat.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/samples/FormatTest.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/samples/aicmodel/T2000/TIA2000.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/samples/aicmodel/T2000/TIA2000Item.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/samples/staringmodel/T1000/Header.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/samples/staringmodel/T1000/TIA1000.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/codec/dataformat/samples/staringmodel/T1000/TIA1000Item.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/connector/cbs10/Cbs10Request.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/connector/cbs10/Cbs10Response.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/linking/connector/sbs10/Sbs10Request.java" charset="GBK" />
