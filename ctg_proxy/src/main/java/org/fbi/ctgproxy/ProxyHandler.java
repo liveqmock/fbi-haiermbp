@@ -78,12 +78,14 @@ public class ProxyHandler implements ChannelHandler {
                     if (eciRequest.Call_Type == 1) {
                         //TODO 判断交易号 及终端号
                         CtgSif txnHeader = new CtgSif(eciRequest.Commarea);
-                        logger.debug("===" + txnHeader);
+                        logger.debug(">>>>" + txnHeader);
                         String txnCode = txnHeader.getTxnCode();
                         String termId = txnHeader.getTermId();
 
-                        processCpsTxn(ctgRequest, eciRequest, osToClient);
-                        return;
+                        if (isLocalTxncode(txnCode)) {
+                            processCpsTxn(ctgRequest, eciRequest, osToClient);
+                            continue;
+                        }
                     }
                 }
                 //转发
@@ -95,7 +97,6 @@ public class ProxyHandler implements ChannelHandler {
 
                 //返回客户端
                 sbsCtgRequest.writeObject(osToClient);
-                //sbsCtgRequest.writeObject(osToClient);
             }
         } catch (SocketException e) {
             logger.info("连接已关闭", e.getMessage());
@@ -149,7 +150,8 @@ public class ProxyHandler implements ChannelHandler {
     //======================
     //初始化本地交易处理列表
     private void initLocalTxncodeList() {
-        String localTxncode = ProjectConfigManager.getInstance().getStringProperty("local_txncode");
+//        String localTxncode = ProjectConfigManager.getInstance().getStringProperty("local_txncode");
+        String localTxncode = "n020";
         this.localTxncodes = Arrays.asList(localTxncode.split(","));
     }
 

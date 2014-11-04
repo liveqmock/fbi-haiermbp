@@ -264,6 +264,7 @@
       <module fileurl="file://$PROJECT_DIR$/ctg_proxy/ctg_proxy.iml" filepath="$PROJECT_DIR$/ctg_proxy/ctg_proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/ctg_proxy_cfg/ctg_proxy_cfg.iml" filepath="$PROJECT_DIR$/ctg_proxy_cfg/ctg_proxy_cfg.iml" />
       <module fileurl="file://$PROJECT_DIR$/sbs_mbp_proxy/sbs_mbp_proxy.iml" filepath="$PROJECT_DIR$/sbs_mbp_proxy/sbs_mbp_proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sbs_mbp_proxy_cfg/sbs_mbp_proxy_cfg.iml" filepath="$PROJECT_DIR$/sbs_mbp_proxy_cfg/sbs_mbp_proxy_cfg.iml" />
       <module fileurl="file://$PROJECT_DIR$/sbs_mbp_proxy_start/sbs_mbp_proxy_cfg.iml" filepath="$PROJECT_DIR$/sbs_mbp_proxy_start/sbs_mbp_proxy_cfg.iml" />
       <module fileurl="file://$PROJECT_DIR$/xplay/xplay-1.0.iml" filepath="$PROJECT_DIR$/xplay/xplay-1.0.iml" />
     </modules>
