@@ -261,6 +261,8 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ccb-mbp-proxy/ccb-mbp-proxy.iml" filepath="$PROJECT_DIR$/ccb-mbp-proxy/ccb-mbp-proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccb-mbp-proxy-cfg/ccb-mbp-proxy-cfg.iml" filepath="$PROJECT_DIR$/ccb-mbp-proxy-cfg/ccb-mbp-proxy-cfg.iml" />
       <module fileurl="file://$PROJECT_DIR$/ctg_proxy/ctg_proxy.iml" filepath="$PROJECT_DIR$/ctg_proxy/ctg_proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/ctg_proxy_cfg/ctg_proxy_cfg.iml" filepath="$PROJECT_DIR$/ctg_proxy_cfg/ctg_proxy_cfg.iml" />
       <module fileurl="file://$PROJECT_DIR$/sbs_mbp_proxy/sbs_mbp_proxy.iml" filepath="$PROJECT_DIR$/sbs_mbp_proxy/sbs_mbp_proxy.iml" />
@@ -286,4 +288,3 @@
     </library>
   </component>
 </project>
-
