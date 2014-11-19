@@ -263,6 +263,7 @@ public class TcpProxy {
     //=================
     public static void main(String[] args) throws IOException {
         TcpProxy proxy = new TcpProxy();
+        proxy.logger.info("CCB to MBP proxy server is starting...");
         proxy.start();
     }
 }
