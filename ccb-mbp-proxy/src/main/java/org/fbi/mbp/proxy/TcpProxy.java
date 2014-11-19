@@ -22,7 +22,7 @@ import java.util.concurrent.Executors;
  * Created by zhanrui on 2014/9/8.
  */
 public class TcpProxy {
-    private static final  int THREADS = ProjectConfigManager.getInstance().getIntProperty("proxy_server_threads");
+    private static final int THREADS = ProjectConfigManager.getInstance().getIntProperty("proxy_server_threads");
     private static final Executor executor = Executors.newFixedThreadPool(THREADS);
 
     private final String mbpHost = ProjectConfigManager.getInstance().getStringProperty("mbp.server.ip");
@@ -181,14 +181,34 @@ public class TcpProxy {
         String fipUrl = ProjectConfigManager.getInstance().getStringProperty("txn4879.fip.url");
         Integer fipDelaySeconds = ProjectConfigManager.getInstance().getIntProperty("txn4879.fip.fail.repeat.delay.second");
 
-        boolean isDone = false;
         int count = 0;
+        //等待CCB文件
+        String xml = null;
+        while (count <= 10) {
+            try {
+                xml = readFileByLines(tmpfilePath + filename);
+            } catch (Exception e) {
+                try {
+                    Thread.sleep(fipDelaySeconds * 1000);
+                } catch (InterruptedException e1) {
+                    //
+                }
+                count++;
+            }
+        }
+
+        if (xml == null) {
+            logger.error("文件未发现:" + tmpfilePath + filename);
+            return;
+        }
+
+        boolean isDone = false;
+        count = 0;
         while (!isDone && count <= repeatTimes) {
             try {
-                String xml = readFileByLines(tmpfilePath + filename);
                 String resp = doPost(fipUrl, xml, "GBK");
                 if (StringUtils.isEmpty(resp)) {
-                    count ++;
+                    count++;
                     Thread.sleep(fipDelaySeconds * 1000);
                     logger.error("<<<<<<<<Fip response error.");
                 } else {
@@ -196,7 +216,12 @@ public class TcpProxy {
                     logger.debug("<<<<<<<<" + resp);
                 }
             } catch (Exception e) {
-                count ++;
+                try {
+                    Thread.sleep(fipDelaySeconds * 1000);
+                } catch (InterruptedException e1) {
+                    //
+                }
+                count++;
             }
         }
     }
@@ -248,9 +273,9 @@ public class TcpProxy {
             HttpResponse httpResponse = httpclient.execute(httppost);
 
             //HttpStatus.SC_OK)表示连接成功
-            if(httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK){
+            if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 return EntityUtils.toString(httpResponse.getEntity(), charsetName);
-            }else{
+            } else {
                 return null;
             }
         } catch (IOException e) {
