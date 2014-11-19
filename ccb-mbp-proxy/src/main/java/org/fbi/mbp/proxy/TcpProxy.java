@@ -2,6 +2,7 @@ package org.fbi.mbp.proxy;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -234,19 +235,24 @@ public class TcpProxy {
     private String doPost(String serverUrl, String datagram, String charsetName) {
         HttpClient httpclient = new DefaultHttpClient();
         try {
-            HttpPost httppost = null;
             //请求超时
             httpclient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 1000 * 5);
             //读取超时
             httpclient.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 1000 * 10);
-            httppost = new HttpPost(serverUrl);
+
+            HttpPost httppost = new HttpPost(serverUrl);
             httppost.getURI();
             StringEntity xmlSE = new StringEntity(datagram, charsetName);
             httppost.setEntity(xmlSE);
 
             HttpResponse httpResponse = httpclient.execute(httppost);
-            // 设置字符集，以防乱码
-            return EntityUtils.toString(httpResponse.getEntity(), charsetName);
+
+            //HttpStatus.SC_OK)表示连接成功
+            if(httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK){
+                return EntityUtils.toString(httpResponse.getEntity(), charsetName);
+            }else{
+                return null;
+            }
         } catch (IOException e) {
             throw new RuntimeException("Http 通讯错误", e);
         } finally {
