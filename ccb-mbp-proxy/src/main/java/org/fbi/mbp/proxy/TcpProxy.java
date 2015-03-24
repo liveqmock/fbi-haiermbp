@@ -104,8 +104,13 @@ public class TcpProxy {
                 executor.execute(task4879);
             }
 
-            //proxy
-            handleProxy(bytesMerger(inHeaderBuf, inBodyBuf), out);
+            //处理需忽略的交易
+            if (isIgnoreTxn(txnCode)) {
+                logger.info("忽略的交易:" + txnCode);
+            } else {
+                //proxy
+                handleProxy(bytesMerger(inHeaderBuf, inBodyBuf), out);
+            }
         } finally {
             try {
                 connection.close();
@@ -286,6 +291,20 @@ public class TcpProxy {
         } finally {
             httpclient.getConnectionManager().shutdown();
         }
+    }
+
+    private boolean isIgnoreTxn(String txnCode){
+        String txnCfg = ProjectConfigManager.getInstance().getStringProperty("proxy.ignore.txncode");
+        if (StringUtils.isEmpty(txnCfg)) {
+            return false;
+        }
+        String[] txns = txnCfg.split(",");
+        for (String txn : txns) {
+            if (txnCode.equals(txn)) {
+                return true;
+            }
+        }
+        return  false;
     }
 
     //=================
