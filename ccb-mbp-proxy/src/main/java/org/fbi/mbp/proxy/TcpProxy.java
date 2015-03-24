@@ -23,7 +23,8 @@ import java.util.concurrent.Executors;
  */
 public class TcpProxy {
     private static final int THREADS = ProjectConfigManager.getInstance().getIntProperty("proxy_server_threads");
-    private static final Executor executor = Executors.newFixedThreadPool(THREADS);
+    //private static final Executor executor = Executors.newFixedThreadPool(THREADS);
+    private static final Executor executor = Executors.newCachedThreadPool();
 
     private final String mbpHost = ProjectConfigManager.getInstance().getStringProperty("mbp.server.ip");
     private final int mbpPort = ProjectConfigManager.getInstance().getIntProperty("mbp.server.port");
@@ -130,6 +131,7 @@ public class TcpProxy {
             byte[] inHeaderBuf = new byte[MSG_HEADER_LENGTH];
             int readNum = is.read(inHeaderBuf);
             if (readNum == -1) {
+                SmsHelper.asyncSendSms(ProjectConfigManager.getInstance().getStringProperty("proxy.notify.phones"), "CCB-MBP-PROXY:read mbp响应时连接已关闭");
                 throw new RuntimeException("服务器连接已关闭!");
             }
             if (readNum < MSG_HEADER_LENGTH) {
@@ -187,6 +189,7 @@ public class TcpProxy {
         while (count <= 10) {
             try {
                 xml = readFileByLines(tmpfilePath + filename);
+                break;
             } catch (Exception e) {
                 try {
                     Thread.sleep(fipDelaySeconds * 1000);
@@ -288,7 +291,7 @@ public class TcpProxy {
     //=================
     public static void main(String[] args) throws IOException {
         TcpProxy proxy = new TcpProxy();
-        proxy.logger.info("CCB to MBP proxy server is starting...");
+        proxy.logger.info("CCB to MBP proxy server is now loading...");
         proxy.start();
     }
 }
