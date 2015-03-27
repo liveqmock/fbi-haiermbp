@@ -66,6 +66,7 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/ccb-mbp-proxy/src/main/java/org/fbi/mbp/proxy/SmsHelper.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/CtgManager.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/SBSRequest.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/ctg_proxy/src/main/java/org/fbi/ctgserver/util/sbsmsg/SBSResponse.java" charset="GBK" />
@@ -82,22 +83,6 @@
     <entry_points version="2.0" />
   </component>
   <component name="IdProvider" IDEtalkID="4F98668B54AEB9D2111E5EC293671F6B" />
-  <component name="InspectionProjectProfileManager">
-    <profiles>
-      <profile version="1.0" is_locked="false">
-        <option name="myName" value="Project Default" />
-        <option name="myLocal" value="false" />
-        <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
-          <option name="processCode" value="true" />
-          <option name="processLiterals" value="true" />
-          <option name="processComments" value="true" />
-        </inspection_tool>
-      </profile>
-    </profiles>
-    <option name="PROJECT_PROFILE" value="Project Default" />
-    <option name="USE_PROJECT_PROFILE" value="true" />
-    <version value="1.0" />
-  </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
     <option name="OPTION_SCOPE" value="protected" />
@@ -271,7 +256,7 @@
       <module fileurl="file://$PROJECT_DIR$/xplay/xplay-1.0.iml" filepath="$PROJECT_DIR$/xplay/xplay-1.0.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7_i586" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/../../out" />
   </component>
   <component name="VcsDirectoryMappings">

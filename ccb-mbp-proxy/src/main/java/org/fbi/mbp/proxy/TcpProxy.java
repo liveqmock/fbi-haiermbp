@@ -87,27 +87,26 @@ public class TcpProxy {
             logger.debug(">>>>Client request header:" + msgHeader.toString());
             logger.debug(">>>>Client request body:" + inBodyData);
 
-            //2014-11-13 对4879到账通知报文进行处理
-            if ("4879".equals(txnCode)) {
-                Runnable task4879 = new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Thread.sleep(3000);  //wait MBP to copy winbridge tmp file...
-                        } catch (InterruptedException e) {
-                            //
-                        }
-                        processT4879(inBodyData);
-                        logger.debug("T4879处理完成");
-                    }
-                };
-                executor.execute(task4879);
-            }
-
             //处理需忽略的交易
             if (isIgnoreTxn(txnCode)) {
                 logger.info("忽略的交易:" + txnCode);
             } else {
+                //2014-11-13 对4879到账通知报文进行处理
+                if ("4879".equals(txnCode)) {
+                    Runnable task4879 = new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                Thread.sleep(3000);  //wait MBP to copy winbridge tmp file...
+                            } catch (InterruptedException e) {
+                                //
+                            }
+                            processT4879(inBodyData);
+                            logger.debug("T4879处理完成");
+                        }
+                    };
+                    executor.execute(task4879);
+                }
                 //proxy
                 handleProxy(bytesMerger(inHeaderBuf, inBodyBuf), out);
             }

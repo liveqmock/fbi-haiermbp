@@ -28,8 +28,8 @@ public class CtgTest_zk1748 {
         // String strUrl = "local:";
         // String buff = "";
         // int iPort = 1445;
-        String strUrl = "127.0.0.1";
-//        String strUrl = "10.143.20.130";
+//        String strUrl = "127.0.0.1";
+        String strUrl = "10.143.20.130";
 
         String buff = "";
         int iPort = 2006;
@@ -98,9 +98,9 @@ public class CtgTest_zk1748 {
                 list.add("FSPP293062000001");      //FS流水号
                 list.add("1300000000000082");      //交易流水号*/
 
-                list.add("MPC1000147231487");     //MPC流水号
+                list.add("MPC1000147232105");     //MPC流水号
                 list.add("010");                    //交易机构
-                list.add("20141028");               //委托日期
+                list.add("20141204");               //委托日期
                 list.add("010104");                 //客户号
                 list.add("CTY");                    //交易类型
                 list.add("001");                    //交易货币
@@ -134,7 +134,7 @@ public class CtgTest_zk1748 {
                 list.add("保留项    ");            //保留项
                 list.add(" ");                     //保留项
                 list.add("FSPP293062000001");      //FS流水号
-                list.add("1300000000000087");      //交易流水号
+                list.add("1300000000000105");      //交易流水号
 
 
 /*
